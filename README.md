@@ -1,19 +1,7 @@
 # BAP Protocol Reverse Engineering
 
-Documentation and analysis of Volkswagen's event-driven **Bedien-und Anzeigeprotokoll (BAP)**, reverse-engineered for PQ and MQB platforms. Includes protocol specifications, CAN traces, and behavioral observations.
-Research here will help with the development of an open source library to use to interface with BAP devices. 
----
+Documentation and analysis of **Bedien-und Anzeigeprotokoll (BAP)**, reverse-engineered for PQ and MQB platforms. Includes protocol specifications, CAN traces, and behavioral observations. This research supports development of open-source libraries for interfacing with BAP-enabled ECUs.
 
-## Table of Contents
-- [Protocol Overview](#protocol-overview)
-- [Platform Implementations](#platform-implementations)
-- [Message Architecture (PQ)](#message-architecture-(PQ))
-- [CAN Traces](#can-traces)
-- [Contributing](#contributing)
-- [Safety & Legal](#safety--legal)
-- [License](#license)
-
----
 
 ## Protocol Overview
 
@@ -25,8 +13,6 @@ BAP (Control and Display Protocol) manages ECU communication in Volkswagen Group
 - **Error resilience**: Automatic retransmission and state synchronization
 - **Multi-frame support** for messages >6 bytes
 
----
-
 ## Platform Implementations
 
 ### PQ Platform
@@ -37,147 +23,115 @@ BAP (Control and Display Protocol) manages ECU communication in Volkswagen Group
 ├───────────────┼──────────────┼─────────────────┤
 │   0x123       │     8        │ 01 03 0A 00 05. │
 └───────────────┴──────────────┴─────────────────┘
-                                       │
-                                       ▼
-┌─────────────┬─────────────┬─────────────────┐
-│ BAP Header  │ BAP Header  │ Data            │
-│ Byte 1      │ Byte 2      │ (up to 6 bytes) │
-├─────────────┼─────────────┼─────────────────┤
-│ op_code/LSG │ LSG/FCT     │ Payload Data    │
-└─────────────┴─────────────┴─────────────────┘
 ```
 
-Example message:
+### Message Architecture (PQ)
+
+#### Multi-Frame Handling
+PQ platforms use the first bit of the message to determine frame type:
+
+1. **Short Frame (≤6 bytes)**
+```plaintext
+Byte 0 (First byte of message):
+┌─┬───────────┐
+│0│OP Code    │ ◄── First bit 0 indicates Short Frame
+└─┴───────────┘
+
+Complete Frame Structure:
+┌────────────┬────────────┬──────────────────────┐
+│First Byte  │Second Byte │   Payload (0-6 B)    │
+│[0|OP Code] │[LSG|FCT]   │                      │
+└────────────┴────────────┴──────────────────────┘
 ```
-ID: 0x123  DLC: 8  Data: 01 03 0A 00 05 01 00 00
-    │           │       └─────────────────────┘
-    │           │                └── BAP payload
-    │           └── Length
-    └── Standard 11-bit identifier
+
+2. **Long Frame (>6 bytes)**
+```plaintext
+**Long Frame Structure**
+
+Preamble Byte 0 (Bit Layout):
+```plaintext
+┌─┬─┬──────────┐
+│1│S│  Index   │
+└─┴─┴──────────┘
+ │ │    │
+ │ │    └── 6 bits: Frame index (starts at 0)
+ │ └──── Frame type (0=Start frame, 1=Continuation)
+ └────── Always 1 for Long Frame
 ```
+
+Start Frame (S=0):
+```plaintext
+┌────────────┬────────────┬────────────┬─────────────┐
+│Preamble B0 │Preamble B1 │BAP Header  │Payload      │
+│[1|0|Index] │[Total Len] │[LSG|FCT]   │(up to 6 B)  │
+└────────────┴────────────┴────────────┴─────────────┘
+
+Continuation Frame (S=1):
+┌────────────┬─────────────────────────────────┐
+│Preamble    │           Payload               │
+│[1|1|Index] │         (up to 7 B)            │
+└────────────┴─────────────────────────────────┘
+```
+
+**Sequence Control**:
+- Initial sequence marker: 0x80 (10000000 binary)
+- Continuation Index starts at: 0xC0 (11000000 binary)
 
 ### MQB Platform
-
-Extended 29-bit identifiers with embedded addressing:
-Check out the MQB section for more info.
-
-```
-Extended CAN ID Structure (29-bit):
-┌───────────┬────────────┬
-│ Base ID   │ LSG ID     │  
-│ (11 bits) │ (8 bits)   │ 
-└───────────┴────────────┴
+Extended 29-bit identifiers with embedded LSG addressing:
+```plaintext
+┌──────────────┬────────────┬──────────────┐
+│ Base ID      │ LSG ID     │ Subsystem ID │
+│ (16 bits)    │ (8 bits)   │ (5 bits)     │
+└──────────────┴────────────┴──────────────┘
 ```
 
-Example:
-```
-ID: 0x1733 08 00
-      └──┘ └── LSG ID (0x08)
-      └── Base identifier
-    
-    
-```
+#### LSG Mappings (Found in traces)
+- 0x01: Climate Control
+- 0x03: Webasto
+- 0x0A: Parking Sensors
+- 0x11: Time/Date Module
 
-## Message Architecture (PQ)
+## Research Status
 
-### Header Format
+### Confirmed Findings (PQ Platform)
+1. **Frame Sequencing**
+   - Timeout behavior documented
+   - Error recovery mechanisms tested
 
-The BAP header uses a 2-byte format:
+### Under Investigation (MQB Platform)
+1. **Multi-frame Protocol**
+   - Frame sequence patterns
+   - Error recovery mechanisms
+   - Length encoding variations
 
-```
-Bit Layout:
-15 14 13 12│11 10 09 08 07 06│05 04 03 02 01 00
-└─op_code──┘└────lsg_id─────┘└────fct_id───────┘
-```
-
-Fields:
-- `op_code` (4 bits): Operation type identifier
-- `lsg_id` (6 bits): Logical System Group identifier
-- `fct_id` (6 bits): Function identifier within the LSG
-
-### Common Operations
-
-| op_code | Name | Example Payload | Purpose |
-|---------|------|----------------|----------|
-| 0x1 | BAP-Config | `03 01 0B 00 05` | Version info |
-| 0x2 | FSG-Setup | `00` | Ready state |
-| 0x3 | Heartbeat | `0A` | Keep-alive |
-
-### Message Sequences
-
-Seen initialization sequence:
-```
-Device → ECU: BAP-Config    [Version info]
-ECU → Device: FSG-Setup     [Ready state]
-Device → ECU: Heartbeat     [Interval]
-```
-
-Error recovery patterns:
-```
-On timeout: Reinitialize sequence
-On data error: Request retransmission
-On state mismatch: Request full update
-```
-
-## CAN Traces
-
-### Directory Structure
-
-```
-MIB -> RVC
-Coming soon 
-```
-
-### Documentation Template
-
-For each control unit:
-
-```markdown
-### Control Unit Information
-- Part Number: [e.g., 5K0-000-xxx]
-- Software Version: [e.g., 0102]
-- Type: [LSG/FSG]
-- Known FCT/LSG IDs: [List with descriptions]
-
-### Behavior Documentation
-- Platform: [PQ/MQB]
-- User Action: [Description]
-- Expected Response: [Description]
-- Trace File: [Filename]
-```
+2. **Advanced Features**
+   - Extended addressing schemes
+   - Cross-platform compatibility
+   - Diagnostic integration
 
 ## Contributing
 
-We welcome contributions that expand our understanding of the BAP protocol. Focus areas include:
+### Priority Research Areas
+1. MQB Time/Date Module (0x17331110) testing
+2. Multi-frame message handling differences
 
-1. Message pattern documentation
-2. Unknown FCT code identification
-3. Platform-specific behaviors
-4. Error handling sequences
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+### Submission Guidelines
+1. Maintain clear platform separation (PQ/MQB)
+2. Include CAN traces for validation
+3. Document test conditions and hardware setup
+4. Follow existing format for consistency
 
 ## Safety & Legal
 
-### ⚠️ Safety Notice
-
-Vehicle systems research requires:
-- Understanding of automotive safety systems
-- Proper testing environment (Bench Test when possible)
-- Do no interfer with the Powertrain CAN, BAP is avaible on non-critical buses
-- Compliance with local regulations
-- Awareness of warranty implications
-
-### Research Used
-
-Used for protocol understanding only (no code incorporated):
-
-- [kisim](https://github.com/tmbinc/kisim/) (BSD-3): Protocol analysis concepts
-- [revag-bap](https://github.com/norly/revag-bap/) (GPLv2): Early BAP documentation
-- Karl Dietmann's BAP research (blog.dietmann.org, archived)
+### Critical Requirements
+- Use bench testing setups 
 
 ## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This documentation is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
+## Research Acknowledgments
+- Karl Dietmann's BAP research (2009-2012) 
+- kisim project (BSD-3) https://github.com/tmbinc/kisim
+- revag-bap contributors (GPLv2) https://github.com/norly/revag-bap/
