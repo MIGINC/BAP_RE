@@ -69,7 +69,7 @@ Start Frame (S=0):
 Continuation Frame (S=1):
 ┌────────────┬─────────────────────────────────┐
 │Preamble    │           Payload               │
-│[1|1|Index] │         (up to 7 B)            │
+│[1|1|Index] │         (up to 7 B)             │
 └────────────┴─────────────────────────────────┘
 ```
 
@@ -94,26 +94,19 @@ Extended 29-bit identifiers with embedded LSG addressing:
 
 ## Research Status
 
-### Confirmed Findings (PQ Platform)
-1. **Frame Sequencing**
-   - Timeout behavior documented
-   - Error recovery mechanisms tested
+### Under Investigation (PQ Platform)
+1. - Startup handshake
 
 ### Under Investigation (MQB Platform)
 1. **Multi-frame Protocol**
-   - Frame sequence patterns
+   - Frame sequencing
    - Error recovery mechanisms
-   - Length encoding variations
-
-2. **Advanced Features**
-   - Extended addressing schemes
-   - Cross-platform compatibility
-   - Diagnostic integration
+   - Multi-frame handling
 
 ## Contributing
 
 ### Priority Research Areas
-1. MQB Time/Date Module (0x17331110) testing
+1. MQB Time/Date (0x17331110) testing
 2. Multi-frame message handling differences
 
 
