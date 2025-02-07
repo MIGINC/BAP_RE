@@ -31,6 +31,7 @@ BAP (Control and Display Protocol) manages ECU communication in Volkswagen Group
 PQ platforms use the first bit of the message to determine frame type:
 
 1. **Short Frame (≤6 bytes)**
+   
 ```plaintext
 Byte 0 (First byte of message):
 ┌─┬───────────┐
@@ -49,7 +50,7 @@ Complete Frame Structure:
 **Long Frame Structure**
 
 Preamble Byte 0 (Bit Layout):
-```plaintext
+
 ┌─┬─┬──────────┐
 │1│S│  Index   │
 └─┴─┴──────────┘
@@ -114,12 +115,11 @@ Extended 29-bit identifiers with embedded LSG addressing:
 1. Maintain clear platform separation (PQ/MQB)
 2. Include CAN traces for validation
 3. Document test conditions and hardware setup
-4. Follow existing format for consistency
+4. Please see my example traces
 
-## Safety & Legal
-
-### Critical Requirements
-- Use bench testing setups 
+## Safety
+- Use bench testing setups
+- Please don't drive and CAN trace
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
