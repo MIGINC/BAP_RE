@@ -160,11 +160,94 @@ Extended 29-bit identifiers with embedded LSG addressing:
 └──────────────┴────────────┴──────────────┘
 ```
 
-#### LSG Mappings (Found in traces)
-- 0x01: Climate Control
-- 0x03: Webasto
-- 0x0A: Parking Sensors
-- 0x11: Time/Date Module
+## 📌 MQB Data Source & Accuracy
+Much of the MQB ID mapping information comes from **Drive2 (User: VanHighlander)**.  
+⚠️ **Accuracy is still being verified**—some IDs may not be correct or might behave differently depending on vehicle configuration.  
+
+If you can **confirm, correct, or expand** on any of this data, please share your findings or submit a Pull Request!
+
+---
+## Climatronic Control (HVAC)
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17330100` | `Klima1 ASG` | Climate Control (ASG - MIB2) |
+| `0x17330200` | `Klima2 ASG` | Climate Control (Secondary ASG) |
+| `0x17330110` | `Klima1 FSG` | Climate Control (FSG - HVAC ECU) |
+| `0x17330210` | `Klima2 FSG` | Climate Control (Secondary FSG) |
+
+---
+## Seat Controls & Memory Functions
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17331000` | `Sitz ASG` | Seat Control (ASG - MIB2) |
+| `0x17331010` | `Sitz FSG` | Seat Control (FSG - Seat Module) |
+
+---
+## Unit & Cluster Settings
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17331300` | `Einheiten ASG` | Unit Settings (ASG - MIB2) |
+| `0x17331310` | `Einheiten FSG` | Unit Settings (FSG - Cluster) |
+
+---
+## Exterior Lighting
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17330900` | `Aussenlicht ASG` | Exterior Lighting (ASG - MIB2) |
+| `0x17330910` | `Aussenlicht FSG` | Exterior Lighting (FSG - Body Control Module) |
+
+##  Interior Lighting 
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17330800` | `Innenlicht ASG` | Exterior Lighting (ASG - MIB2) |
+| `0x17330810` | `Innenlicht FSG` | Exterior Lighting (FSG - Body Control Module) |
+
+
+
+##  Traffic Sign Assist (VZA)
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17332100` | `VZA ASG` | Traffic Sign Recognition (ASG) |
+| `0x17332110` | `VZA FSG` | Traffic Sign Recognition (FSG) |
+
+---
+## Lane Assist
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17331A00` | `SWA ASG_01` | Lane Assist (ASG - Cluster) |
+| `0x17331A01` | `SWA ASG_02` | Secondary Lane Assist (ASG - MIB2) |
+| `0x17331A10` | `SWA FSG` | Lane Assist (FSG - ECU) |
+
+---
+## Parking Sensors & Rear View Camera
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17330A00` | `OPS ASG` | Parking Sensors (ASG - MIB2) |
+| `0x17330A10` | `OPS FSG` | Parking Sensors (FSG - PDC ECU) |
+| `0x17330B00` | `RVC ASG` | Rear View Camera (ASG - MIB2) |
+| `0x17330B10` | `RVC FSG` | Rear View Camera (FSG - RVC Module) |
+
+---
+## Webasto Heating System
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17330300` | `Webasto ASG` | Webasto Mode Control (ASG - MIB2) |
+| `0x17330310` | `Webasto FSG` | Webasto Mode Control (FSG - Webasto ECU) |
+
+---
+## Time & Date Synchronization
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17331100` | `TimeDate ASG 01` | Time & Date Sync (ASG - MIB2) |
+| `0x17331110` | `TimeDate FSG 01` | Time & Date Sync (FSG - Cluster) |
+
+---
+## Power Rear Gate
+| **CAN ID**        | **Function Name**           | **Description** |
+|-------------------|---------------------------|----------------|
+| `0x17331F10` | `RGS FSG 01` | Power Rear Gate (FSG - Rear ECU) |
+| `0x17331F00` | `RGS ASG 01` | Power Rear Gate (ASG - MIB2) |
+
 
 ## Research Status
 
