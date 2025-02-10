@@ -1,5 +1,16 @@
 # BAP Protocol Reverse Engineering
 
+ **GitHub Discussions Now Open! Join the Research!** 🚀  
+We’ve enabled **GitHub Discussions** to collaborate on BAP protocol decoding!  
+- Share **CAN traces**
+- Ask **questions about PQ/MQB platforms**
+- Contribute to **multi-frame handling research**
+- 
+ **Much more data is on the way!**  
+I’m actively formatting and organizing my research, so expect new **function mappings, message breakdowns, and analysis updates soon!**
+
+##
+
 Documentation and analysis of **Bedien-und Anzeigeprotokoll (BAP)**, reverse-engineered for PQ and MQB platforms. Includes protocol specifications, CAN traces, and behavioral observations. This research supports development of open-source libraries for interfacing with BAP-enabled ECUs.
 
 
@@ -13,6 +24,18 @@ BAP (Control and Display Protocol) manages ECU communication in Volkswagen Group
 - **Error resilience**: Automatic retransmission and state synchronization
 - **Multi-frame support** for messages >6 bytes
 
+
+## Acronyms & Definitions
+- **BAP** – Bedien- und Anzeigeprotokoll (Control & Display Protocol)
+- **DDP** – Display Data Protocol (Predecessor to BAP)
+- **CAN** – Controller Area Network (Vehicle communication bus)
+- **FSG** – Funktionsteuergerät (Function Control Unit) → Sends data
+- **ASG** – Anzeigesteuergerät (Display Control Unit) → Receives data
+- **LSG** – Logical Service Group (Groups related functions)
+- **FCT** – Function ID (Identifies a specific BAP function)
+- **MSB/LSB** – Most Significant Byte / Least Significant Byte
+- **ECU** – Electronic Control Unit (A vehicle's embedded controller)
+ 
 ## Platform Implementations
 
 ### PQ Platform
@@ -78,6 +101,56 @@ Continuation Frame (S=1):
 - Initial sequence marker: 0x80 (10000000 binary)
 - Continuation Index starts at: 0xC0 (11000000 binary)
 
+
+## BAP Startup Handshake (PQ Platform)
+During initialization, the Function Control Unit (FSG) and Display Unit (ASG) exchange specific messages:
+
+1. **FSG-Setup (`FCT_ID = 0x0E`)**
+   - Sent by the **FSG (e.g., RVC module)** to inform the **ASG (e.g., MIB2)** that the function group is ready.
+
+
+2. **FSG-OperationState (`FCT_ID = 0x0F`)**
+   - Defines operational states:
+     - `0x00` Normal Operation
+     - `0x01` Off/Standby
+     - `0x03` Initializing
+     - `0x0E` Function Inactive
+     - `0x0F` Defective
+
+3. **BAP-Config (`FCT_ID = 0x02`)**
+   - Provides protocol version and supported function list.
+
+4. **Function-List (`FCT_ID = 0x03`)**
+   - ECU tells the ASG which features it supports.
+
+5. **GetAll / StatusAll**
+   - The ASG requests all function values, the ECU replies.
+
+```mermaid
+sequenceDiagram
+    participant MIB2 as MIB2 STD PQ Radio (ASG)
+    participant RVC as Rear View Camera (FSG)
+
+    Note over MIB2, RVC: System Initialization
+    MIB2->>RVC: GetAll (0x01) - Request All Functions
+    RVC->>MIB2: StatusAll (0x04) - Respond with Camera Status
+    
+    MIB2->>RVC: BAP-Config (0x02) - Get Configuration
+    RVC->>MIB2: Function-List (0x03) - List Available Features
+    
+    Note over MIB2, RVC: Camera Mode Change
+    MIB2->>RVC: Request Camera Change (ChangeArray 0x03)
+    RVC->>MIB2: StatusArray (0x04) - Confirm Mode Change
+
+    Note over MIB2, RVC: Adjust Brightness, Contrast, Color
+    MIB2->>RVC: SetGetArray (0x02) - Change Camera Settings
+    RVC->>MIB2: StatusArray (0x04) - Confirm Setting Change
+
+    loop Periodic Heartbeat
+        RVC->>MIB2: Heartbeat (0x03)
+        MIB2->>RVC: Heartbeat Response (0x03)
+    end
+```
 ### MQB Platform
 Extended 29-bit identifiers with embedded LSG addressing:
 ```plaintext
