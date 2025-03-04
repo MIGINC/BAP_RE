@@ -1,6 +1,6 @@
 # BAP Protocol Reverse Engineering
 
- **GitHub Discussions Now Open! Join the Research!** 🚀  
+ **GitHub Discussions Now Open! Join the Research!**  
 We’ve enabled **GitHub Discussions** to collaborate on BAP protocol decoding!  
 - Share **CAN traces**
 - Ask **questions about PQ/MQB platforms**
@@ -152,7 +152,8 @@ sequenceDiagram
     end
 ```
 ### MQB Platform
-Extended 29-bit identifiers with embedded LSG addressing:
+On MQB, the protocol has been updated to use extended 29‑bit CAN identifiers that embed the LSG directly in the ID. This change optimizes multi‑frame messaging by reducing payload overhead, and allowing hardware can filtering on devices lowering processing times. 
+
 ```plaintext
 ┌──────────────┬────────────┬──────────────┐
 │ Base ID      │ LSG ID     │ Subsystem ID │
@@ -160,9 +161,53 @@ Extended 29-bit identifiers with embedded LSG addressing:
 └──────────────┴────────────┴──────────────┘
 ```
 
-## 📌 MQB Data Source & Accuracy
+With the LSG included in the identifier, more of the 8‑byte payload is available for data and control fields.
+
+## MQB Multi‑Frame Diagram
+```plaintext
+┌────────────┬────────────┬──────────────┬─────────────────┐
+│ Byte 0:    │ Byte 1:    │ Byte 2:      │ Bytes 3–7:      │
+│ Seg. Header│ Total Len  │ Function ID? │ Data Payload    │
+└────────────┴────────────┴──────────────┴─────────────────┘
+(A header starting with 0x80 indicates the start frame)
+```
+```plaintext
+┌────────────┬────────────────────────────┐
+│ Byte 0:    │ Bytes 1–7:                 │
+│ Seg. Header│ Data Payload               │
+└────────────┴────────────────────────────┘
+(Segmentation headers from 0xC0 upward denote sequence)
+```
+
+```plaintext
+38.984000 2R29 17333300 1C C1 
+38.985000 2R29 17333310 80 92 4C C1 03 01 33 00 
+39.035000 2R29 17333310 C0 03 0B 08 00 38 07 EF 
+39.084000 2R29 17333310 C1 F8 00 00 00 00 0A 00 
+39.135000 2R29 17333310 C2 00 00 00 00 05 00 08 
+39.184000 2R29 17333310 C3 00 00 00 00 00 00 00 
+39.235000 2R29 17333310 C4 00 00 00 01 04 01 06 
+39.285000 2R29 17333310 C5 52 00 01 27 56 65 72 
+39.334000 2R29 17333310 C6 69 7A 6F 6E 00 00 00 
+39.384000 2R29 17333310 C7 00 00 00 00 00 00 00 
+39.434000 2R29 17333310 C8 00 00 00 00 00 00 00 
+39.484000 2R29 17333310 C9 00 00 00 00 00 00 00 
+39.535000 2R29 17333310 CA 00 00 00 00 00 00 00 
+39.584000 2R29 17333310 CB 00 01 27 56 65 72 69 
+39.634000 2R29 17333310 CC 7A 6F 6E 00 00 00 00 
+39.684000 2R29 17333310 CD 00 00 00 00 00 00 00 
+39.734000 2R29 17333310 CE 00 00 00 00 00 00 00 
+39.784000 2R29 17333310 CF 00 00 00 00 00 00 00 
+39.834000 2R29 17333310 C0 00 00 00 00 00 00 00 
+39.884000 2R29 17333310 C1 40 00 00 00 00 00 00 
+39.934000 2R29 17333310 C2 00 00 00 00 28 00 00 
+39.984000 2R29 17333310 C3 00 00 00 00 00 00 00
+example of LSG 0x33 traffic
+```
+
+##  MQB Data Source & Accuracy
 Much of the MQB ID mapping information comes from **Drive2 (User: VanHighlander)**.  
-⚠️ **Accuracy is still being verified**—some IDs may not be correct or might behave differently depending on vehicle configuration.  
+**Accuracy is still being verified**—some IDs may not be correct or might behave differently depending on vehicle configuration.  
 
 If you can **confirm, correct, or expand** on any of this data, please share your findings or submit a Pull Request!
 
