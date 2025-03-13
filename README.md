@@ -157,7 +157,7 @@ On MQB, the protocol has been updated to use extended 29‑bit CAN identifiers t
 ```plaintext
 ┌──────────────┬────────────┬──────────────┐
 │ Base ID      │ LSG ID     │ Subsystem ID │
-│ (16 bits)    │ (8 bits)   │ (5 bits)     │
+│ (16 bits)    │ (8 bits)   │ (8 bits)     │
 └──────────────┴────────────┴──────────────┘
 ```
 
