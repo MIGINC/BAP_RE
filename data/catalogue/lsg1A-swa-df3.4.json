@@ -1,0 +1,207 @@
+{
+  "lsg": 26,
+  "lsg_name": "SWA",
+  "df": "3.4",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 41,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "Country",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "Brightness",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "WarningTime",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "FSG_Control",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "Gong",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "SWAGongVolume",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "Configuration",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 23,
+      "name": "RCTA",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "RCTA_SensorData",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "ExitAssist",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 26,
+      "name": "Fct_1A",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 27,
+      "name": "RCTA_BrakeIntervention",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 28,
+      "name": "Personalisation",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 34,
+      "rx_size": 31,
+      "variable": true,
+      "logged_in_car": false
+    },
+    {
+      "fct": 29,
+      "name": "Fct_1D",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    }
+  ],
+  "records": {}
+}

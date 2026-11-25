@@ -1,0 +1,350 @@
+{
+  "lsg": 8,
+  "lsg_name": "Innenlicht",
+  "df": "5.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 135,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "SetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 41,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "Colour",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "AmbianceLighting",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "EnvironmentDependence",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "TemperatureDependence",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "SpeedDependence",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "Brightness",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "IlluminationSet1",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "IlluminationSet2",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "IlluminationSet3",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "IlluminationSet4",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 26,
+      "name": "IlluminationSet5",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 27,
+      "name": "IlluminationSet6",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 28,
+      "name": "IlluminationSet7",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 29,
+      "name": "IlluminationSet8",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 30,
+      "name": "IntLightConfig",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 14,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 31,
+      "name": "ActiveProfile",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 32,
+      "name": "AmbientLightColor",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 33,
+      "name": "ContourLightColor",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 34,
+      "name": "IlluminationProfile1",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 35,
+      "name": "IlluminationProfile2",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 36,
+      "name": "IlluminationProfile3",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 37,
+      "name": "IlluminationProfile4",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 38,
+      "name": "IlluminationProfile5",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 39,
+      "name": "IlluminationProfile6",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 40,
+      "name": "IlluminationProfile7",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 41,
+      "name": "IlluminationProfile8",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 42,
+      "name": "RGBColorList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 45,
+      "rx_size": 44,
+      "variable": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 43,
+      "name": "FollowUpTime",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

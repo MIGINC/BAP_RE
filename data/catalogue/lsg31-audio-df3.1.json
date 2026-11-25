@@ -1,0 +1,296 @@
+{
+  "lsg": 49,
+  "lsg_name": "Audio",
+  "df": "3.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 304,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "Source",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 17,
+      "name": "SourceText",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 49,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 18,
+      "name": "Volume",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 19,
+      "name": "Mute",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 20,
+      "name": "SourceState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 21,
+      "name": "NowPlaying",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 150,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 22,
+      "name": "List",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 319,
+      "rx_size": 5,
+      "variable": true,
+      "layout": {
+        "kind": "array",
+        "max_elements": 6,
+        "prefix": {
+          "status": [
+            {
+              "name": "Total",
+              "type": "u16"
+            }
+          ]
+        },
+        "element": [
+          {
+            "name": "Icon",
+            "type": "u8",
+            "ra_in": [
+              0,
+              2
+            ]
+          },
+          {
+            "name": "Text",
+            "type": "string",
+            "max": 48,
+            "ra_in": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "logged_in_car": true
+    },
+    {
+      "fct": 23,
+      "name": "DedicatedAudioControl",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 3,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 24,
+      "name": "GeneralInfoSwitches",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 25,
+      "name": "TP_Info",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 35,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": false
+    },
+    {
+      "fct": 26,
+      "name": "Announcement",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 32,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 27,
+      "name": "AnnouncementOk",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 28,
+      "name": "StatusMessage",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 29,
+      "name": "InfoListType",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 31,
+      "name": "ChangeInfoListType",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 32,
+      "name": "SaveStation",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 4,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 33,
+      "name": "ChangeTunerVariant",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    }
+  ],
+  "records": {
+    "arrayheader": {
+      "fields": [
+        {
+          "name": "Mode",
+          "type": "nibble_hi",
+          "bits": {
+            "0": "Shift",
+            "1": "Backward",
+            "2": "PosTransmitted",
+            "3": "IndexSize16"
+          }
+        },
+        {
+          "name": "RecordAddress",
+          "type": "nibble_lo"
+        },
+        {
+          "name": "Start",
+          "type": "index"
+        },
+        {
+          "name": "Elements",
+          "type": "index"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "lsg": 9,
+  "lsg_name": "Aussenlicht",
+  "df": "5.4",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 55,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "ExtLightSetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "ExtLightDayLight",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "ExtLightTourist",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "ExtLightComingHome",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "ExtLightLeavingHome",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "ExtLightSwitchOnSensitivity",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "ExtLightLampErrorDetection",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "ExtLightMotorwayBlinking",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "ExtLightLampErrorDetectionTrailer",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "ExtLightAdaptive",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "ExtLightHeadLightSystem",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 26,
+      "name": "ExtLightGlidingLightSystem",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 27,
+      "name": "ExtLightMaskedHighBeam",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 28,
+      "name": "Fct_1C",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 29,
+      "name": "ExtLightAutomaticLight",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 30,
+      "name": "ExtLightLaserLight",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 31,
+      "name": "ExtLightHeadlightRange",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

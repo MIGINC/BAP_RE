@@ -1,0 +1,93 @@
+{
+  "lsg": 16,
+  "lsg_name": "Sitz1",
+  "df": "4.5",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 101,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "SeatRadioKeyAutomatic",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "SeatEasyEntry",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 40,
+      "name": "Fct_28",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 48,
+      "rx_size": 45,
+      "variable": true
+    }
+  ],
+  "records": {}
+}

@@ -1,331 +1,160 @@
 # BAP Protocol Reverse Engineering
 
- **GitHub Discussions Now Open! Join the Research!**  
-We’ve enabled **GitHub Discussions** to collaborate on BAP protocol decoding!  
-- Share **CAN traces**
-- Ask **questions about PQ/MQB platforms**
-- Contribute to **multi-frame handling research**
-- 
- **Much more data is on the way!**  
-I’m actively formatting and organizing my research, so expect new **function mappings, message breakdowns, and analysis updates soon!**
+Documentation and analysis of **BAP**, the *Bedien- und Anzeigeprotokoll* ("operating and display protocol"), for PQ and MQB platforms. It's how a VW Group function module (phone, tyre pressure, parking sensors, ACC, rear camera…) gets its state and settings onto a display module (the cluster or the radio).
 
-##
+This is a rewrite. Parts of the first version were wrong, see [what changed](#what-changed). LSGs, CAN IDs and the main claims now have a [status tag](#status-tags).
 
-Documentation and analysis of **Bedien-und Anzeigeprotokoll (BAP)**, reverse-engineered for PQ and MQB platforms. Includes protocol specifications, CAN traces, and behavioral observations. This research supports development of open-source libraries for interfacing with BAP-enabled ECUs.
+**GitHub Discussions are open.** Share CAN traces, ask questions, send corrections. See [CONTRIBUTING](CONTRIBUTING.md).
 
+## Protocol overview
 
-## Protocol Overview
+- **Event driven, with a heartbeat**: modules report changes, plus one property per heartbeat period
+- **Fixed 16-bit header** with opcode, LSG and function ID
+- **Segmentation** for anything that needs it
+- **Versioned**: each LSG has its own version (DF), which decides its functions
+- **Same framing on PQ and MQB**, only the CAN IDs differ
 
-BAP (Control and Display Protocol) manages ECU communication in Volkswagen Group vehicles, succeeding DDP (Diagnostic Data Protocol). Key features:
+## Acronyms & definitions
 
-- **Event-driven architecture**: Reduces bus load vs constant polling
-- **Standardized messaging**: Fixed header with variable payload
-- **Multi-platform support**: PQ and MQB implementations
-- **Error resilience**: Automatic retransmission and state synchronization
-- **Multi-frame support** for messages >6 bytes
+- **BAP** – Bedien- und Anzeigeprotokoll (operating and display protocol)
+- **DDP** – Display Data Protocol (predecessor to BAP)
+- **FSG** – Funktionssteuergerät (function control unit), owns the data
+- **ASG** – Anzeigesteuergerät (display control unit), shows it and lets the driver change it
+- **LSG** – Logisches Steuergerät (logical control unit), one function group. A box can host several
+- **FCT** – function ID inside an LSG
+- **DF** – the LSG version, from BAP_Config
+- **RDK** – Reifendruckkontrolle, the tyre pressure module
+- **RNS / MIB2** – VW radios, RNS 510 and the later MIB2
+- **Cluster / Kombi** – the instrument cluster
+- **MFL** – the steering wheel buttons (Multifunktionslenkrad)
+- **UHV** – the factory phone module (Universelle Handyvorbereitung)
+- **Coding** – a module's configuration, set with a diagnostic tool
+- **Placard** – the recommended tyre pressures on the door sticker
 
-
-## Acronyms & Definitions
-- **BAP** – Bedien- und Anzeigeprotokoll (Control & Display Protocol)
-- **DDP** – Display Data Protocol (Predecessor to BAP)
-- **CAN** – Controller Area Network (Vehicle communication bus)
-- **FSG** – Funktionsteuergerät (Function Control Unit) → Sends data
-- **ASG** – Anzeigesteuergerät (Display Control Unit) → Receives data
-- **LSG** – Logical Service Group (Groups related functions)
-- **FCT** – Function ID (Identifies a specific BAP function)
-- **MSB/LSB** – Most Significant Byte / Least Significant Byte
-- **ECU** – Electronic Control Unit (A vehicle's embedded controller)
- 
-## Platform Implementations
-
-### PQ Platform
-**CAN 2.0A** implementation with 11-bit identifiers:
-```plaintext
-┌───────────────┬──────────────┬─────────────────┐
-│ 11-bit CAN ID │   DLC (4b)   │   Payload (8B)  │
-├───────────────┼──────────────┼─────────────────┤
-│   0x123       │     8        │ 01 03 0A 00 05. │
-└───────────────┴──────────────┴─────────────────┘
-```
-
-### Message Architecture (PQ)
-
-#### Multi-Frame Handling
-PQ platforms use the first bit of the message to determine frame type:
-
-1. **Short Frame (≤6 bytes)**
-   
-```plaintext
-Byte 0 (First byte of message):
-┌─┬───────────┐
-│0│OP Code    │ ◄── First bit 0 indicates Short Frame
-└─┴───────────┘
-
-Complete Frame Structure:
-┌────────────┬────────────┬──────────────────────┐
-│First Byte  │Second Byte │   Payload (0-6 B)    │
-│[0|OP Code] │[LSG|FCT]   │                      │
-└────────────┴────────────┴──────────────────────┘
-```
-
-2. **Long Frame (>6 bytes)**
-```plaintext
-**Long Frame Structure**
-
-Preamble Byte 0 (Bit Layout):
-
-┌─┬─┬──────────┐
-│1│S│  Index   │
-└─┴─┴──────────┘
- │ │    │
- │ │    └── 6 bits: Frame index (starts at 0)
- │ └──── Frame type (0=Start frame, 1=Continuation)
- └────── Always 1 for Long Frame
-```
-
-Start Frame (S=0):
-```plaintext
-┌────────────┬────────────┬────────────┬─────────────┐
-│Preamble B0 │Preamble B1 │BAP Header  │Payload      │
-│[1|0|Index] │[Total Len] │[LSG|FCT]   │(up to 6 B)  │
-└────────────┴────────────┴────────────┴─────────────┘
-
-Continuation Frame (S=1):
-┌────────────┬─────────────────────────────────┐
-│Preamble    │           Payload               │
-│[1|1|Index] │         (up to 7 B)             │
-└────────────┴─────────────────────────────────┘
-```
-
-**Sequence Control**:
-- Initial sequence marker: 0x80 (10000000 binary)
-- Continuation Index starts at: 0xC0 (11000000 binary)
-
-
-## BAP Startup Handshake (PQ Platform)
-During initialization, the Function Control Unit (FSG) and Display Unit (ASG) exchange specific messages:
-
-1. **FSG-Setup (`FCT_ID = 0x0E`)**
-   - Sent by the **FSG (e.g., RVC module)** to inform the **ASG (e.g., MIB2)** that the function group is ready.
-
-
-2. **FSG-OperationState (`FCT_ID = 0x0F`)**
-   - Defines operational states:
-     - `0x00` Normal Operation
-     - `0x01` Off/Standby
-     - `0x03` Initializing
-     - `0x0E` Function Inactive
-     - `0x0F` Defective
-
-3. **BAP-Config (`FCT_ID = 0x02`)**
-   - Provides protocol version and supported function list.
-
-4. **Function-List (`FCT_ID = 0x03`)**
-   - ECU tells the ASG which features it supports.
-
-5. **GetAll / StatusAll**
-   - The ASG requests all function values, the ECU replies.
-
-```mermaid
-sequenceDiagram
-    participant MIB2 as MIB2 STD PQ Radio (ASG)
-    participant RVC as Rear View Camera (FSG)
-
-    Note over MIB2, RVC: System Initialization
-    MIB2->>RVC: GetAll (0x01) - Request All Functions
-    RVC->>MIB2: StatusAll (0x04) - Respond with Camera Status
-    
-    MIB2->>RVC: BAP-Config (0x02) - Get Configuration
-    RVC->>MIB2: Function-List (0x03) - List Available Features
-    
-    Note over MIB2, RVC: Camera Mode Change
-    MIB2->>RVC: Request Camera Change (ChangeArray 0x03)
-    RVC->>MIB2: StatusArray (0x04) - Confirm Mode Change
-
-    Note over MIB2, RVC: Adjust Brightness, Contrast, Color
-    MIB2->>RVC: SetGetArray (0x02) - Change Camera Settings
-    RVC->>MIB2: StatusArray (0x04) - Confirm Setting Change
-
-    loop Periodic Heartbeat
-        RVC->>MIB2: Heartbeat (0x03)
-        MIB2->>RVC: Heartbeat Response (0x03)
-    end
-```
-### MQB Platform
-On MQB, the protocol has been updated to use extended 29‑bit CAN identifiers that embed the LSG directly in the ID. This change optimizes multi‑frame messaging by reducing payload overhead, and allowing hardware can filtering on devices lowering processing times. 
+## BAP on one screen
 
 ```plaintext
-┌──────────────┬────────────┬──────────────┐
-│ Base ID      │ LSG ID     │ Subsystem ID │
-│ (16 bits)    │ (8 bits)   │ (8 bits)     │
-└──────────────┴────────────┴──────────────┘
+BAP header (every message, 16 bits)
+  byte 0:  0 | O O O | L L L L      O = opcode (3)   L = LSG (6, split 4 + 2)
+  byte 1:  L L | F F F F F F        F = function ID (6)
+
+Single frame        [hdr hi][hdr lo][0-6 data]             length = CAN DLC
+Start frame         [10CC LLLL][LLLLLLLL][hdr hi][hdr lo][4 data]   L = 12-bit payload length
+Continuation        [11CC SSSS][7 data]                    C = channel 0-3, S = sequence 0-15 (wraps)
 ```
 
-With the LSG included in the identifier, more of the 8‑byte payload is available for data and control fields.
+| Op | Property | Array | Method | Cache | Sent by |
+|---|---|---|---|---|---|
+| 0 | Set / Reset | SetArray | Start | – | ASG (Reset: FSG) |
+| 1 | Get | GetArray | Abort | GetAll | ASG |
+| 2 | SetGet | SetGetArray | StartResult | – | ASG |
+| 3 | HeartbeatStatus | ChangedArray | Processing | – | FSG |
+| 4 | Status | StatusArray | Result | StatusAll | FSG |
+| 5 | StatusAck | – | – | – | FSG, few functions |
+| 6 | Ack | – | – | – | ASG, answering a 5 |
+| 7 | Error | Error | Error | Error | FSG |
 
-## MQB Multi‑Frame Diagram
-```plaintext
-┌────────────┬────────────┬──────────────┬─────────────────┐
-│ Byte 0:    │ Byte 1:    │ Byte 2:      │ Bytes 3–7:      │
-│ Seg. Header│ Total Len  │ Function ID? │ Data Payload    │
-└────────────┴────────────┴──────────────┴─────────────────┘
-(A header starting with 0x80 indicates the start frame)
-```
-```plaintext
-┌────────────┬────────────────────────────┐
-│ Byte 0:    │ Bytes 1–7:                 │
-│ Seg. Header│ Data Payload               │
-└────────────┴────────────────────────────┘
-(Segmentation headers from 0xC0 upward denote sequence)
-```
+A real exchange, cluster and tyre pressure module, logged in car:
 
 ```plaintext
-38.984000 2R29 17333300 1C C1 
-38.985000 2R29 17333310 80 92 4C C1 03 01 33 00 
-39.035000 2R29 17333310 C0 03 0B 08 00 38 07 EF 
-39.084000 2R29 17333310 C1 F8 00 00 00 00 0A 00 
-39.135000 2R29 17333310 C2 00 00 00 00 05 00 08 
-39.184000 2R29 17333310 C3 00 00 00 00 00 00 00 
-39.235000 2R29 17333310 C4 00 00 00 01 04 01 06 
-39.285000 2R29 17333310 C5 52 00 01 27 56 65 72 
-39.334000 2R29 17333310 C6 69 7A 6F 6E 00 00 00 
-39.384000 2R29 17333310 C7 00 00 00 00 00 00 00 
-39.434000 2R29 17333310 C8 00 00 00 00 00 00 00 
-39.484000 2R29 17333310 C9 00 00 00 00 00 00 00 
-39.535000 2R29 17333310 CA 00 00 00 00 00 00 00 
-39.584000 2R29 17333310 CB 00 01 27 56 65 72 69 
-39.634000 2R29 17333310 CC 7A 6F 6E 00 00 00 00 
-39.684000 2R29 17333310 CD 00 00 00 00 00 00 00 
-39.734000 2R29 17333310 CE 00 00 00 00 00 00 00 
-39.784000 2R29 17333310 CF 00 00 00 00 00 00 00 
-39.834000 2R29 17333310 C0 00 00 00 00 00 00 00 
-39.884000 2R29 17333310 C1 40 00 00 00 00 00 00 
-39.934000 2R29 17333310 C2 00 00 00 00 28 00 00 
-39.984000 2R29 17333310 C3 00 00 00 00 00 00 00
-example of LSG 0x33 traffic
+0x6C8  11 C1                     cluster: GetAll          (op 1, LSG 0x07, FCT 0x01)
+0x6DD  80 27 41 C1 03 00 07 00   RDK:     StatusAll, 39 bytes, segmented
+       C0 04 00 08 00 38 07 D9   …
 ```
 
-##  MQB Data Source & Accuracy
-Much of the MQB ID mapping information comes from **Drive2 (User: VanHighlander)**.  
-**Accuracy is still being verified**—some IDs may not be correct or might behave differently depending on vehicle configuration.  
+Only want to read values from a car? Start with [Connect and listen safely](docs/platforms/connect-and-listen.md), then [0x07 RDK](docs/lsg/0x07-rdk.md).
 
-If you can **confirm, correct, or expand** on any of this data, please share your findings or submit a Pull Request!
+Emulating a module? Read [Frames](docs/protocol/frames.md), [Session lifecycle](docs/protocol/session-lifecycle.md) and [Arrays](docs/protocol/arrays.md), then the LSG's page, and the bench part of [Connect and listen safely](docs/platforms/connect-and-listen.md#on-a-bench). Most LSGs have a [start-up trace](Traces/PQ/README.md).
 
----
-## Climatronic Control (HVAC)
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17330100` | `Klima1 ASG` | Climate Control (ASG - MIB2) |
-| `0x17330200` | `Klima2 ASG` | Climate Control (Secondary ASG) |
-| `0x17330110` | `Klima1 FSG` | Climate Control (FSG - HVAC ECU) |
-| `0x17330210` | `Klima2 FSG` | Climate Control (Secondary FSG) |
+Three things that trip everyone up when **emulating** a module:
 
----
-## Seat Controls & Memory Functions
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17331000` | `Sitz ASG` | Seat Control (ASG - MIB2) |
-| `0x17331010` | `Sitz FSG` | Seat Control (FSG - Seat Module) |
+1. **Segmentation is set per function, not decided by length.** A 3-byte array still goes segmented, and a receiver drops the wrong frame form. [More](docs/protocol/frames.md#segmentation-is-decided-per-function-not-by-length)
+2. **The FSG heartbeats and the ASG just listens.** One property per heartbeat period, in rotation. [More](docs/protocol/session-lifecycle.md)
+3. **An FSG must always answer a GetArray**, even with zero elements, or the cluster re-asks every 500 ms, in some cases forever. [More](docs/protocol/arrays.md#the-empty-answer)
 
----
-## Unit & Cluster Settings
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17331300` | `Einheiten ASG` | Unit Settings (ASG - MIB2) |
-| `0x17331310` | `Einheiten FSG` | Unit Settings (FSG - Cluster) |
+## Docs
 
----
-## Exterior Lighting
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17330900` | `Aussenlicht ASG` | Exterior Lighting (ASG - MIB2) |
-| `0x17330910` | `Aussenlicht FSG` | Exterior Lighting (FSG - Body Control Module) |
+**Protocol**
+- [Frames on the wire](docs/protocol/frames.md): header, frame types, channels, segmentation, reassembly
+- [Opcodes and function classes](docs/protocol/opcodes.md)
+- [Generic functions 0x01–0x0F](docs/protocol/generic-functions.md): GetAll, BAP_Config, FunctionList, HeartBeat, 0x0D
+- [Versions](docs/protocol/versions.md): BAP version, DF, what the cluster checks, what changes between versions
+- [Session lifecycle](docs/protocol/session-lifecycle.md): start-up, heartbeat, a checklist for emulating an FSG
+- [Arrays](docs/protocol/arrays.md)
+- [Errors](docs/protocol/errors.md)
+- [MIB2 results](docs/protocol/mib2.md): version checks, retries, errors, ASG_ID and TAID
 
-##  Interior Lighting 
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17330800` | `Innenlicht ASG` | Exterior Lighting (ASG - MIB2) |
-| `0x17330810` | `Innenlicht FSG` | Exterior Lighting (FSG - Body Control Module) |
+**Platforms**
+- [Connect and listen safely](docs/platforms/connect-and-listen.md): bus, bit rate, transceiver, listen-only
+- [CAN ID map](docs/platforms/can-id-map.md): CAN ID → LSG → FSG/ASG, PQ and MQB (raw: [data/](data/))
+- [PQ CAN channels](docs/platforms/pq-can-channels.md) and [PQ network map](docs/platforms/pq-network-map.md)
+- [MQB notes](docs/platforms/mqb.md)
 
+**LSGs**
+- [LSG index](docs/lsg/README.md)
+- [Function catalogue](docs/catalogue/README.md): functions, types and sizes per LSG and DF, Markdown and [JSON](data/catalogue)
+- [ASG requests (MIB2)](docs/catalogue/asg-requests-mib2.md): what a MIB2 writes when a setting changes
+- [0x07 RDK, tyre pressure](docs/lsg/0x07-rdk.md)
+- [0x08 Interior light](docs/lsg/0x08-innenlicht.md)
+- [0x2B Secondary Display](docs/lsg/0x2b-secondary-display/README.md): phone text on the cluster
 
+**Traces**
+- [Traces/](Traces/README.md)
 
-##  Traffic Sign Assist (VZA)
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17332100` | `VZA ASG` | Traffic Sign Recognition (ASG) |
-| `0x17332110` | `VZA FSG` | Traffic Sign Recognition (FSG) |
+## Status tags
 
----
-## Lane Assist
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17331A00` | `SWA ASG_01` | Lane Assist (ASG - Cluster) |
-| `0x17331A01` | `SWA ASG_02` | Secondary Lane Assist (ASG - MIB2) |
-| `0x17331A10` | `SWA FSG` | Lane Assist (FSG - ECU) |
+| Tag | Meaning |
+|---|---|
+| **Tested with cluster** | tested against a real or emulated cluster or MIB2 |
+| **Logged in car** | it's in a capture from a real car |
+| **Simulated (application layer)** | values put into an emulated MIB2 above BAP, and decoded. Says what a value means, says nothing about framing, versions, timing or CAN IDs |
+| **Untested** | none of these yet. Treat it as a lead, not a fact |
 
----
-## Parking Sensors & Rear View Camera
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17330A00` | `OPS ASG` | Parking Sensors (ASG - MIB2) |
-| `0x17330A10` | `OPS FSG` | Parking Sensors (FSG - PDC ECU) |
-| `0x17330B00` | `RVC ASG` | Rear View Camera (ASG - MIB2) |
-| `0x17330B10` | `RVC FSG` | Rear View Camera (FSG - RVC Module) |
+Cluster tests are tagged per LSG, so an individual function on a tested LSG may not have been exercised. Car captures are tagged per function in the catalogue.
 
----
-## Webasto Heating System
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17330300` | `Webasto ASG` | Webasto Mode Control (ASG - MIB2) |
-| `0x17330310` | `Webasto FSG` | Webasto Mode Control (FSG - Webasto ECU) |
+## What changed
 
----
-## Time & Date Synchronization
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17331100` | `TimeDate ASG 01` | Time & Date Sync (ASG - MIB2) |
-| `0x17331110` | `TimeDate FSG 01` | Time & Date Sync (FSG - Cluster) |
+- Continuation frames are a 2-bit channel and a 4-bit sequence, not a 6-bit index
+- Start frames carry a 12-bit length and the header, then 4 payload bytes
+- The ASG doesn't answer heartbeats
+- MQB keeps the 2-byte header. The LSG is in the CAN ID as well, not instead
+- 0x1A is Side Assist, Lane Assist is 0x19
+- MQB 0x1A: suffix 00 is the MIB and 01 is the cluster. The first version had them the other way round
+- A failed multi-frame transfer isn't requested again with the Error opcode
+- 0x10 ASG_Capabilities and 0x11 ASG_Config belong to the Secondary Display only, they aren't generic
+- RDK unit `01` is psi, raw ÷ 2. It was 40 counts per bar
+- The RDK has no functions 0x28 to 0x3D
+- MQB 0x08 is the interior light, the first version said exterior
 
----
-## Power Rear Gate
-| **CAN ID**        | **Function Name**           | **Description** |
-|-------------------|---------------------------|----------------|
-| `0x17331F10` | `RGS FSG 01` | Power Rear Gate (FSG - Rear ECU) |
-| `0x17331F00` | `RGS ASG 01` | Power Rear Gate (ASG - MIB2) |
+New since then: versions, FCT 0x0D, opcodes 5 and 6 (StatusAck and Ack), the function catalogue and the CAN ID map
 
+## Research status
 
-## Research Status
+| Area | State |
+|---|---|
+| PQ framing, header, opcodes | done |
+| Start-up, GetAll, heartbeat | done, emulated FSGs reach the running state on a cluster |
+| Arrays | header known, some records decoded |
+| Error handling | little seen on the wire |
+| Function names | varies by LSG, see the catalogue |
+| MQB | framing confirmed from one trace, IDs mostly untested |
 
-### Under Investigation (PQ Platform)
-1. - Startup handshake
+## MQB data source & accuracy
 
-### Under Investigation (MQB Platform)
-1. **Multi-frame Protocol**
-   - Frame sequencing
-   - Error recovery mechanisms
-   - Multi-frame handling
-
-## Contributing
-
-### Priority Research Areas
-1. MQB Time/Date (0x17331110) testing
-2. Multi-frame message handling differences
-
-
-### Submission Guidelines
-1. Maintain clear platform separation (PQ/MQB)
-2. Include CAN traces for validation
-3. Document test conditions and hardware setup
-4. Please see my example traces
+Much of the MQB ID mapping came from **Drive2 (user VanHighlander)** and is still being verified. PRs are welcome.
 
 ## Safety
-- Use bench testing setups
-- Please don't drive and CAN trace
+
+Emulate on a bench, and in a car only listen. See [Connect and listen safely](docs/platforms/connect-and-listen.md).
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Research Acknowledgments
-- Karl Dietmann's BAP research (2009-2012) 
-- kisim project (BSD-3) https://github.com/tmbinc/kisim
-- revag-bap contributors (GPLv2) https://github.com/norly/revag-bap/
+MIT, see [LICENSE](LICENSE).
+
+## Acknowledgments
+
+- Karl Dietmann's BAP research (2009–2012)
+- kisim project (BSD-3), https://github.com/tmbinc/kisim
+- revag-bap contributors (GPLv2), https://github.com/norly/revag-bap/
+- ronaldocordeiro, for the Audi TPMS retrofit (0x07 tyre temperature), https://github.com/ronaldocordeiro/Audi_A3_TPMS_on_MIB1
+- Drive2 user VanHighlander, for the MQB CAN ID table

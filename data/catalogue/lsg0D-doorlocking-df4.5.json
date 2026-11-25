@@ -1,0 +1,339 @@
+{
+  "lsg": 13,
+  "lsg_name": "Doorlocking",
+  "df": "4.5",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 149,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "DoorLockingSetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "ComfortOpen",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "CentralLocking",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "RainClosing",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "TheftProtectionSensorSetup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "AcknowledgeHonk",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "RearBlind",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "TurnIndicatorRepeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "AutoLock",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "AutoUnLock",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "MirrorFoldIn",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 26,
+      "name": "DoorLockingMessage",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 27,
+      "name": "DoorLockingLockStatus",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 28,
+      "name": "DoorLockingWindowStatus",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 29,
+      "name": "BootOpen",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 30,
+      "name": "BootClose",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 31,
+      "name": "DoorLockingRemoteLockUnlock",
+      "class": "Method",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 6,
+      "variable": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 32,
+      "name": "DoorLockingRemoteLockUnlockAuthentification",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 42,
+      "rx_size": 0,
+      "variable": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 33,
+      "name": "DoorLockingRemoteLockUnlockSignature",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 36,
+      "rx_size": 36,
+      "variable": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 34,
+      "name": "DoorLockingRemoteHorn",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 35,
+      "name": "DoorLockingRemoteBlinking",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 36,
+      "name": "UserProfileList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 289,
+      "rx_size": 75,
+      "variable": true
+    },
+    {
+      "fct": 37,
+      "name": "DoorLockingActiveUser",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 38,
+      "name": "DoorLockingUserProfileOnOff",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 39,
+      "name": "DoorLockingUserProfileControl",
+      "class": "Method",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 40,
+      "name": "DoorLockingViewOptions",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 41,
+      "name": "DoorLockingWindowAutoClose",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 42,
+      "name": "DoorlockingBlindsControl",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

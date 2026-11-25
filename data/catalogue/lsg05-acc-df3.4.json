@@ -1,0 +1,189 @@
+{
+  "lsg": 5,
+  "lsg_name": "ACC",
+  "df": "3.4",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 39,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "GongState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "GongVolume",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "DefaultMode",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "TimeGap",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "DrivingProgram",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "CurveAssist",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "SpeedLimitAdoption",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "SpeedLimitOffset",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "TrafficJamAssist",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "DistanceWarning",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 3,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 26,
+      "name": "FSG_Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 27,
+      "name": "FSG_Control",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    }
+  ],
+  "records": {}
+}
