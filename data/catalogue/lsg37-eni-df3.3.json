@@ -1,0 +1,152 @@
+{
+  "lsg": 55,
+  "lsg_name": "ENI",
+  "df": "3.3",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 38,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "FSG_Control",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "DestinationsList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 589,
+      "rx_size": 587,
+      "variable": true
+    },
+    {
+      "fct": 17,
+      "name": "DestinationListASGCapacity",
+      "class": "Property",
+      "type": "int16",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 18,
+      "name": "TriggerRemoteProcess",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 257,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "RemoteProcessCommands",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 20,
+      "name": "RemoteProcessState",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 21,
+      "name": "UserList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 740,
+      "rx_size": 4,
+      "variable": true
+    },
+    {
+      "fct": 22,
+      "name": "ServiceList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 173,
+      "rx_size": 172,
+      "variable": true
+    },
+    {
+      "fct": 23,
+      "name": "ActiveMonitorings",
+      "class": "Property",
+      "type": "int32",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 24,
+      "name": "PrivacySetup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

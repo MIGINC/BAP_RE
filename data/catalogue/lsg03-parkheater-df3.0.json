@@ -1,0 +1,165 @@
+{
+  "lsg": 3,
+  "lsg_name": "ParkHeater",
+  "df": "3.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 44,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "AuxHeaterSetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "Fct_10",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 17,
+      "name": "Duration",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 18,
+      "name": "Ventilation",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "EngineHeater",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "SystemMessages",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "Activation",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 22,
+      "name": "DepartureTime1",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 6,
+      "variable": false
+    },
+    {
+      "fct": 23,
+      "name": "DepartureTime2",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 6,
+      "variable": false
+    },
+    {
+      "fct": 24,
+      "name": "DepartureTime3",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 6,
+      "variable": false
+    },
+    {
+      "fct": 25,
+      "name": "Weekday",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 26,
+      "name": "HeatVentMode",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

@@ -1,0 +1,91 @@
+{
+  "lsg": 8,
+  "lsg_name": "Innenlicht",
+  "df": "3.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 21,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 13,
+      "name": "SetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "Colour",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "AmbianceLighting",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

@@ -1,0 +1,287 @@
+{
+  "lsg": 45,
+  "lsg_name": "Amplifier",
+  "df": "3.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 26,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "SoundOn",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "PowerAmps",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 17,
+      "name": "Sources",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 18,
+      "name": "SrcVolumeOffset",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 19,
+      "name": "GALA",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 20,
+      "name": "SrcGALA",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 21,
+      "name": "Volume",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 7,
+      "variable": false
+    },
+    {
+      "fct": 22,
+      "name": "VolumeNow",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 23,
+      "name": "Balance",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 24,
+      "name": "Fader",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 25,
+      "name": "Bass",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 26,
+      "name": "Middle",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 27,
+      "name": "Treble",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 29,
+      "rx_size": 29,
+      "variable": true
+    },
+    {
+      "fct": 28,
+      "name": "InputSetting_Loudness",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 29,
+      "name": "Subwoofer",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 30,
+      "name": "Preset_RoomMode",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 31,
+      "name": "Fct_1F",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 32,
+      "name": "Fct_20",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 33,
+      "name": "Fct_21",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 34,
+      "name": "Equalizer5Band",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 55,
+      "rx_size": 55,
+      "variable": true
+    },
+    {
+      "fct": 35,
+      "name": "Fct_23",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 11,
+      "variable": true
+    },
+    {
+      "fct": 36,
+      "name": "Fct_24",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 17,
+      "rx_size": 17,
+      "variable": true
+    },
+    {
+      "fct": 37,
+      "name": "MemorySave",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 38,
+      "name": "MemoryRecall",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 39,
+      "name": "Fct_27",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 9,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

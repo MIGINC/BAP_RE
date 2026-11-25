@@ -1,0 +1,377 @@
+{
+  "lsg": 1,
+  "lsg_name": "Klima1",
+  "df": "3.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 75,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "AirconSystemOnOffRow1",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "AirconAirCirculationMan",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 17,
+      "name": "AirconAirCirculationAuto",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 18,
+      "name": "Fct_12",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "AirconSolar",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 20,
+      "name": "AirconAirCirculationMiddleExhaustion",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 21,
+      "name": "AirconSynchronisation",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 22,
+      "name": "AirconPopupRequest",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 23,
+      "name": "AirconPopupState",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 24,
+      "name": "AirconRearWindowHeater",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 25,
+      "name": "AirconIndirectVentilation",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 26,
+      "name": "AirconPopupTime",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 27,
+      "name": "AirconTempZone1",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 28,
+      "name": "AirconAirVolumeZone1",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 29,
+      "name": "AirconAirVolumeZone1",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 30,
+      "name": "AirconAirDistributionZone1_AirconAirVolumeZone1",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false
+    },
+    {
+      "fct": 31,
+      "name": "AirconSeatHeaterZone1",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 32,
+      "name": "AirconSeatVentilationZone1",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 33,
+      "name": "AirconTempZone2",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 34,
+      "name": "AirconAirVolumeZone2",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 35,
+      "name": "AirconAirVolumeZone2",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 36,
+      "name": "AirconAirDistributionZone2_AirconAirVolumeZone2",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false
+    },
+    {
+      "fct": 37,
+      "name": "AirconSeatHeaterZone2",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 38,
+      "name": "AirconSeatVentilationZone2",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 39,
+      "name": "AirconRearControl",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 40,
+      "name": "AirconAirCirculationSensitivity",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 41,
+      "name": "AirconResidualHeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 42,
+      "name": "AirconHeater",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 43,
+      "name": "Fct_2B",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 44,
+      "name": "AirconRearAuxHeater",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 45,
+      "name": "AirconFrontWindowHeater",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 46,
+      "name": "AirconDefrost",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 47,
+      "name": "AirconSuppressVisualisation",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 48,
+      "name": "AirconBlowerCompensation",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 49,
+      "name": "AirconAC",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

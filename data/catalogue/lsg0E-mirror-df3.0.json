@@ -1,0 +1,91 @@
+{
+  "lsg": 14,
+  "lsg_name": "Mirror",
+  "df": "3.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 19,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 13,
+      "name": "MirrorSetFactoryDefault",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "MirrorSettings",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

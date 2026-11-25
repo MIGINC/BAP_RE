@@ -1,0 +1,120 @@
+{
+  "lsg": 29,
+  "lsg_name": "LSG_1D",
+  "df": "3.3",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 26,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "Fct_0D",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "HybridEnergyFlowState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "HybridCharge",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "Fct_12",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "HybridRecoveredEnergy",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "Fct_14",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

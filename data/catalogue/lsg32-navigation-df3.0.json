@@ -1,0 +1,244 @@
+{
+  "lsg": 50,
+  "lsg_name": "Navigation",
+  "df": "3.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 201,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "CompassInfo",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 17,
+      "name": "RG_Status",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 18,
+      "name": "DistanceToNextManeuver",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 7,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 19,
+      "name": "CurrentPositionInfo",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 75,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 20,
+      "name": "TurnToInfo",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 75,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 21,
+      "name": "DistanceTimeToDestination",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 11,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 22,
+      "name": "ManeuverDescriptor",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 63,
+      "rx_size": 3,
+      "variable": true,
+      "layout": {
+        "kind": "array",
+        "max_elements": 3,
+        "element": [
+          {
+            "name": "A",
+            "type": "u8",
+            "ra_in": [
+              0,
+              1
+            ]
+          },
+          {
+            "name": "B",
+            "type": "u8",
+            "ra_in": [
+              0,
+              2
+            ]
+          },
+          {
+            "name": "C",
+            "type": "u8",
+            "ra_in": [
+              0,
+              3
+            ]
+          },
+          {
+            "name": "Text",
+            "type": "string",
+            "max": 16,
+            "ra_in": [
+              0,
+              4
+            ]
+          }
+        ]
+      },
+      "logged_in_car": true
+    },
+    {
+      "fct": 23,
+      "name": "LaneGuidance",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 20,
+      "rx_size": 3,
+      "variable": true,
+      "logged_in_car": false
+    },
+    {
+      "fct": 24,
+      "name": "Fct_18",
+      "class": "Property",
+      "type": "void",
+      "tx_size": 0,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 25,
+      "name": "MagnetFieldZone",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 26,
+      "name": "Calibration",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 27,
+      "name": "Fct_1B",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    }
+  ],
+  "records": {
+    "arrayheader": {
+      "fields": [
+        {
+          "name": "Mode",
+          "type": "nibble_hi",
+          "bits": {
+            "0": "Shift",
+            "1": "Backward",
+            "2": "PosTransmitted",
+            "3": "IndexSize16"
+          }
+        },
+        {
+          "name": "RecordAddress",
+          "type": "nibble_lo"
+        },
+        {
+          "name": "Start",
+          "type": "index"
+        },
+        {
+          "name": "Elements",
+          "type": "index"
+        }
+      ]
+    }
+  }
+}

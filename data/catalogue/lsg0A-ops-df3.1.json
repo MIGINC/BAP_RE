@@ -1,0 +1,152 @@
+{
+  "lsg": 10,
+  "lsg_name": "OPS",
+  "df": "3.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 38,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "PDCSoundFront",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 17,
+      "name": "PDCSoundRear",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 18,
+      "name": "PDCDistanceFront",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "PDCDistanceRear",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 20,
+      "name": "LifeMonitoring",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 21,
+      "name": "PDCMute",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 22,
+      "name": "Fct_16",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 23,
+      "name": "PDCDefaultParkingMode",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 24,
+      "name": "PDCTrailerHitched",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 25,
+      "name": "PDCSystemOnOff",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

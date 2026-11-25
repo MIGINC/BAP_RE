@@ -1,0 +1,190 @@
+{
+  "lsg": 51,
+  "lsg_name": "eCall",
+  "df": "3.5",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 146,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "FSG_Control",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "AudioState",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "CallState",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 8,
+      "variable": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "HangupCall",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 19,
+      "name": "AcceptCall",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 20,
+      "name": "DisconnectReason",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 21,
+      "name": "RegisterState",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 22,
+      "name": "NetworkProvider",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 82,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 23,
+      "name": "SignalQuality",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 24,
+      "name": "ServiceRequest",
+      "class": "Property",
+      "type": "int32",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 25,
+      "name": "ServiceControl",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 26,
+      "name": "ServiceState",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 27,
+      "name": "SupportedServices",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 28,
+      "name": "FunctionalRestrictions",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

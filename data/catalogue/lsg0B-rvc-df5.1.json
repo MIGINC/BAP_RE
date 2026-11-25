@@ -1,0 +1,218 @@
+{
+  "lsg": 11,
+  "lsg_name": "RVC",
+  "df": "5.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 54,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 13,
+      "name": "FactorySettings",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "FollowUp_Time",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 17,
+      "name": "ScreenRV_ModeRV",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 18,
+      "name": "ScreenFV_ModeFV",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 19,
+      "name": "ScreenSV_ModeSV",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 20,
+      "name": "ScreenBV_ModeBV",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 21,
+      "name": "View",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 22,
+      "name": "Car_State",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 23,
+      "name": "Color",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 24,
+      "name": "Contrast",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 25,
+      "name": "Brightness",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 26,
+      "name": "VPS_Display",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 27,
+      "name": "DynamicMode",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 28,
+      "name": "Overlay",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 29,
+      "name": "CameraStates",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false
+    }
+  ],
+  "records": {}
+}

@@ -1,0 +1,152 @@
+{
+  "lsg": 26,
+  "lsg_name": "SWA",
+  "df": "3.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 33,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 16,
+      "name": "Country",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "Brightness",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "WarningTime",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 19,
+      "name": "FSG_Control",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "Gong",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 21,
+      "name": "Gong_Volume",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 22,
+      "name": "Configuration",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 3,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 23,
+      "name": "RCTA",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "RCTA_SensorData",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 25,
+      "name": "ExitAssist",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {}
+}

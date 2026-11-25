@@ -1,0 +1,243 @@
+{
+  "lsg": 43,
+  "lsg_name": "UHV_SecondaryDisplay",
+  "df": "3.1",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 44,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP_Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 15,
+      "name": "FSG_OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 16,
+      "name": "ASG_Capabilities",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 17,
+      "name": "ASG_Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 18,
+      "name": "MFL_BlockDefinition",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 8,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 19,
+      "name": "FrameStatus",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 6,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 20,
+      "name": "FrameData",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 685,
+      "rx_size": 4,
+      "variable": true,
+      "layout": {
+        "kind": "array",
+        "max_elements": 7,
+        "prefix": {
+          "get": [
+            {
+              "name": "FrameId",
+              "type": "u8"
+            }
+          ],
+          "status": [
+            {
+              "name": "FrameId",
+              "type": "u8"
+            },
+            {
+              "name": "ListElementOnTop",
+              "type": "u8"
+            },
+            {
+              "name": "ListOperation",
+              "type": "u8",
+              "values": {
+                "0x0": "none",
+                "0x1": "list up",
+                "0x2": "list down",
+                "0x3": "page flip up",
+                "0x4": "page flip down",
+                "0x5": "fast scroll up",
+                "0x6": "fast scroll down",
+                "0x7": "fast page flip up",
+                "0x8": "fast page flip down",
+                "0x9": "top",
+                "0xA": "bottom",
+                "0xB": "menu change",
+                "0xC": "enter menu",
+                "0xD": "leave menu"
+              }
+            }
+          ]
+        },
+        "element": [
+          {
+            "name": "Type",
+            "type": "u8",
+            "values": {
+              "0x0": "string",
+              "0x1": "directory",
+              "0x2": "file name",
+              "0x3": "phone number",
+              "0x4": "menu item",
+              "0x5": "check box",
+              "0x6": "radio button",
+              "0x7": "speller",
+              "0x8": "sub-menu"
+            },
+            "ra_mask": 2
+          },
+          {
+            "name": "Attributes",
+            "type": "u8",
+            "bits": {
+              "7": "visible",
+              "3": "activated",
+              "2": "selected",
+              "1": "focused",
+              "0": "selectable"
+            },
+            "ra_mask": 4
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "max": 93,
+            "ra_mask": 1
+          }
+        ]
+      },
+      "logged_in_car": true
+    },
+    {
+      "fct": 21,
+      "name": "FrameDataAck",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 22,
+      "name": "ScrollBar",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 23,
+      "name": "LsgStatus",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true
+    }
+  ],
+  "records": {
+    "arrayheader": {
+      "fields": [
+        {
+          "name": "Mode",
+          "type": "nibble_hi",
+          "bits": {
+            "0": "Shift",
+            "1": "Backward",
+            "2": "PosTransmitted",
+            "3": "IndexSize16"
+          }
+        },
+        {
+          "name": "RecordAddress",
+          "type": "nibble_lo"
+        },
+        {
+          "name": "Start",
+          "type": "index"
+        },
+        {
+          "name": "Elements",
+          "type": "index"
+        }
+      ]
+    }
+  }
+}

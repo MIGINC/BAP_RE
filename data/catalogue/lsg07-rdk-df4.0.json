@@ -1,0 +1,214 @@
+{
+  "lsg": 7,
+  "lsg_name": "RDK",
+  "df": "4.0",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 48,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true,
+      "logged_in_car": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true
+    },
+    {
+      "fct": 13,
+      "name": "SystemOnOff",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 14,
+      "name": "FSG-Setup",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 16,
+      "name": "TPMS_Status",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 17,
+      "name": "TirePressure",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 18,
+      "name": "TireTemperature",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 19,
+      "name": "TargetPressure",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 20,
+      "name": "TireSizeList",
+      "class": "Array",
+      "type": "byteSequence",
+      "tx_size": 683,
+      "rx_size": 3,
+      "variable": true,
+      "layout": {
+        "kind": "array",
+        "max_elements": 11,
+        "element": [
+          {
+            "name": "Text",
+            "type": "string"
+          }
+        ]
+      },
+      "logged_in_car": true
+    },
+    {
+      "fct": 21,
+      "name": "Fct_15",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "logged_in_car": false
+    },
+    {
+      "fct": 22,
+      "name": "TireChanged",
+      "class": "Method",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 23,
+      "name": "WheelSet",
+      "class": "Method",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": true,
+      "simulated": "application"
+    },
+    {
+      "fct": 24,
+      "name": "Fct_18",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "logged_in_car": false,
+      "simulated": "application"
+    }
+  ],
+  "records": {
+    "arrayheader": {
+      "fields": [
+        {
+          "name": "Mode",
+          "type": "nibble_hi",
+          "bits": {
+            "0": "Shift",
+            "1": "Backward",
+            "2": "PosTransmitted",
+            "3": "IndexSize16"
+          }
+        },
+        {
+          "name": "RecordAddress",
+          "type": "nibble_lo"
+        },
+        {
+          "name": "Start",
+          "type": "index"
+        },
+        {
+          "name": "Elements",
+          "type": "index"
+        }
+      ]
+    }
+  }
+}

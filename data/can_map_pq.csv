@@ -1,0 +1,45 @@
+can_id,name,kind,lsgs,sender,peer_can_id,peer,status,notes
+0x66E,BAP_SHZ,fsg,0x03,Aux heater (Standheizung),0x6C9,Cluster,Tested with cluster,ICAN
+0x674,BAP_ACC,fsg,0x05;0x1B,ACC,0x676,Cluster,"Tested with cluster, Logged in car",ACAN or ECAN. The cluster needs a coding bit before it enables ACC
+0x6DD,BAP_RDK,fsg,0x07,RDK (tyre pressure),0x6C8,Cluster,"Tested with cluster, Logged in car",KCAN or ECAN
+0x6DF,,fsg,0x08;0x09;0x0C,Light / body,0x6C8,Cluster,"Tested with cluster, Logged in car",KCAN
+0x6DA,BAP_OPS,fsg,0x0A,Parking (PDC / PLA),0x676,Cluster,"Tested with cluster, Logged in car","ACAN, also forwarded to ICAN, where the radio asks on 0x67A"
+0x6DE,,fsg,0x0D;0x0E,Comfort settings,0x6C8,Cluster,"Tested with cluster, Logged in car",KCAN
+0x677,,fsg,0x17;0x22,? (0x22 = driver alert),0x6C9,Cluster,Tested with cluster,"0x17 is the drive profile, 0x22 the driver alert. Only the cluster's requests are logged"
+0x673,BAP_LDW,fsg,0x19,Lane Assist (HCA),0x676,Cluster,"Tested with cluster, Logged in car",ACAN or ECAN
+0x672,BAP_SWA,fsg,0x1A,Side Assist (SWA),0x676,Cluster,"Tested with cluster, Logged in car","ECAN, also forwarded to ICAN on later gateways, where the radio asks on 0x61D"
+0x679,BAP_HYB,fsg,0x1D,Hybrid / e-Golf motor (probably),0x676,Cluster,Tested with cluster,"ACAN, also forwarded to ICAN. 0x1D as hybrid is a guess"
+0x69B,BAP_VZA,fsg,0x21,VZA (sign recognition camera),0x676,Cluster,"Tested with cluster, Logged in car","ECAN, also forwarded to ICAN. The cluster asks on 0x676, the radio on 0x67A"
+0x66F,BAP_Telefon_04,fsg,0x2B,"UHV phone module, or the MIB2 PQ itself (Secondary Display)",0x67C,Cluster,"Tested with cluster, Logged in car",ICAN. A MIB2 PQ answers this itself
+0x66C,BAP_AUDIO,fsg,0x31,Radio / MIB2 PQ (audio to cluster),0x67C,Cluster,"Tested with cluster, Logged in car",ICAN. The radio is the FSG here
+0x67D,BAP_NAVI,fsg,0x32,"Compass module / nav, or the MIB2 PQ itself",0x67C,Cluster,"Tested with cluster, Logged in car",ICAN. A MIB2 PQ answers this itself
+0x6D2,BAP_Telefon_01,fsg,0x28,UHV phone module (Telephone),0x6C7,Radio / RNS,Untested,
+0x6D5,BAP_Telefon_02,fsg,0x29,UHV phone module (Phonebook),0x6C6,Radio / RNS,Untested,the phonebook splits its functions across 0x6D5 and 0x63B
+0x63B,BAP_Telefon_03,fsg,0x29,UHV phone module (Phonebook),0x6C6,Radio / RNS,Untested,the phonebook splits its functions across 0x6D5 and 0x63B
+0x63C,BAP_MDI,fsg,0x2F,MDI box,0x6C6,Radio / RNS,Untested,
+0x62C,BAP_MDI_02,fsg,0x30,UHV phone module (MDI),0x6C6,Radio / RNS,Untested,
+0x6DC,BAP_RV,fsg,0x0B,Rear view camera,0x6CA,Radio / RNS,"Tested with cluster, Logged in car",ICAN: the radio asks on 0x6CA. KCAN: it asks on 0x6D9 through the gateway
+0x6D3,BAP_TV_Tuner,fsg,,TV tuner,0x6C7,Radio / RNS,Untested,peer not confirmed; may reuse the MDI layout
+0x6D8,BAP_DSP,fsg,0x2D,Amplifier (DSP),0x6C7,Radio / RNS,Tested with cluster,only the radio's requests are logged
+0x6DB,BAP_Clima,fsg,0x01;0x02,Climatronic,0x6CB,Radio / RNS / MIB,"Tested with cluster, Logged in car","KCAN, forwarded to ICAN. Carries two LSGs, only 0x01 is in my car logs"
+0x6E8,BAP_BC,fsg,,Cluster (board computer),0x6EE,RNS midline,Untested,LSG unknown
+0x6D9,BAP_Anzeige_RV,asg,0x0B,Radio / RNS,,Rear view camera (on KCAN),Untested,request ID for a camera on KCAN
+0x678,BAP_OPS_02,fsg,0x0A,Parking (two functions of LSG 0x0A),0x67A,Radio / RNS,Logged in car,"two functions of LSG 0x0A arrive here, the rest on 0x6DA"
+0x6EB,BAP_RDK_02,unknown,,,,,Untested,never seen
+0x61D,BAP_ASG_0E,asg,0x1A,Radio / RNS / MIB,,Side Assist,Logged in car,ICAN to ECAN through the gateway
+0x676,BAP_Anzeige,asg,0x05;0x0A;0x19;0x1A;0x1B;0x1D;0x21,Cluster,,driver-assist FSGs,"Tested with cluster, Logged in car",forwarded to ACAN and ECAN
+0x67C,BAP_ASG_07,asg,0x2B;0x31;0x32,Cluster,,infotainment FSGs,"Tested with cluster, Logged in car",forwarded to ICAN
+0x6C8,BAP_ASG_01,asg,0x07;0x08;0x09;0x0C;0x0D;0x0E,Cluster,,comfort FSGs,"Tested with cluster, Logged in car",forwarded to KCAN and ECAN
+0x6C9,BAP_ASG_02,asg,0x03;0x17;0x22,Cluster,,aux heater and others,"Tested with cluster, Logged in car",forwarded to ICAN
+0x67A,BAP_Anzeige_02,asg,0x0A;0x1D;0x21,Radio / RNS,,PDC; hybrid,Logged in car,"forwarded from ICAN to ACAN, KCAN and ECAN. It's the radio asking, not a cluster"
+0x6C5,BAP_ASG_08,asg,,Radio / RNS,,Amplifier,Untested,the MIB2 PQ asks the amplifier on 0x6C7 instead
+0x6C6,BAP_ASG_06,asg,0x29;0x2F;0x30,Radio / RNS,,MDI; UHV,Untested,
+0x6C7,BAP_ASG_03,asg,0x28;0x2D,Radio / RNS,,UHV; TV; amplifier,"Tested with cluster, Logged in car",
+0x6CA,BAP_ASG_04,asg,0x0B,Radio / RNS,,Rear view camera,"Tested with cluster, Logged in car",doesn't cross the gateway
+0x6CB,BAP_ASG_05,asg,0x01;0x02,Radio / RNS / MIB,,Climatronic,"Tested with cluster, Logged in car",ICAN to KCAN through the gateway
+0x6EE,BAP_ASG_09,asg,,RNS midline,,Cluster (board computer),Untested,ICAN to the cluster through the gateway
+0x6D6,BAP_Debug_Cmd,debug,,BAP tester,,many modules,Untested,"listed on many modules, no use found for it"
+0x6D7,BAP_Debug_Data,debug,,modules,,BAP tester,Untested,"listed on many modules, no use found for it"
+0x66A,,fsg,0x33,eCall module,0x6B7,MIB2 PQ,Untested,
+0x6FD,,fsg,0x37,ENI (online destinations / OCU),0x6B7,RNS / MIB2 PQ,Untested,
+0x6B7,,asg,0x33;0x37,RNS / MIB2 PQ,,eCall; ENI,Untested,

@@ -1,0 +1,207 @@
+{
+  "lsg": 2,
+  "lsg_name": "Klima2",
+  "df": "3.3",
+  "functions": [
+    {
+      "fct": 1,
+      "name": "GetAll",
+      "class": "Cache",
+      "type": "byteSequence",
+      "tx_size": 42,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 2,
+      "name": "BAP-Config",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 6,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 3,
+      "name": "FunctionList",
+      "class": "Property",
+      "type": "byteSequence",
+      "tx_size": 8,
+      "rx_size": 0,
+      "variable": true
+    },
+    {
+      "fct": 4,
+      "name": "HeartBeat",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false
+    },
+    {
+      "fct": 13,
+      "name": "AirconSystemOnOffRow2",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 15,
+      "name": "FSG-OperationState",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 0,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 27,
+      "name": "AirconTempZone3",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 28,
+      "name": "AirconAirVolumeZone3",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 29,
+      "name": "AirconAirVolumeRegZone3",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 30,
+      "name": "AirconAirDistributionZone3",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 31,
+      "name": "AirconSeatHeaterZone3",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 32,
+      "name": "AirconSeatVentilationZone3",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 33,
+      "name": "AirconTempZone4",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 2,
+      "rx_size": 2,
+      "variable": false
+    },
+    {
+      "fct": 34,
+      "name": "AirconAirVolumeZone4",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 35,
+      "name": "AirconAirVolumeRegZone4",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 36,
+      "name": "AirconAirDistributionZone4",
+      "class": "Property",
+      "type": "fixedByteSequence",
+      "tx_size": 4,
+      "rx_size": 4,
+      "variable": false
+    },
+    {
+      "fct": 37,
+      "name": "AirconSeatHeaterZone4",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 38,
+      "name": "AirconSeatVentilationZone4",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false,
+      "simulated": "application"
+    },
+    {
+      "fct": 44,
+      "name": "Fct_2C",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 50,
+      "name": "Fct_32",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    },
+    {
+      "fct": 51,
+      "name": "Fct_33",
+      "class": "Property",
+      "type": "int8",
+      "tx_size": 1,
+      "rx_size": 1,
+      "variable": false
+    }
+  ],
+  "records": {}
+}

@@ -1,0 +1,6200 @@
+[
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Aircon set factory default master",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Aircon system on off row",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0.4 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "state=true",
+    "payload": "11"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Aircon air circulation auto",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.1 air circulation auto"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "air circulation auto=true",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Aircon solar",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 solar"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "solar=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Aircon synchronisation",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = master",
+   "b1.0 slave zone left row 1",
+   "b1.1 slave zone right row 1",
+   "b1.2 slave zone left row 2",
+   "b1.3 slave zone right row 2",
+   "b1.4 slave zone left row 3",
+   "b1.5 slave zone right row 3"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "master=1",
+    "payload": "0100"
+   },
+   {
+    "set": "master=2",
+    "payload": "0200"
+   },
+   {
+    "set": "master=3",
+    "payload": "0300"
+   },
+   {
+    "set": "master=4",
+    "payload": "0400"
+   },
+   {
+    "set": "master=5",
+    "payload": "0500"
+   },
+   {
+    "set": "master=6",
+    "payload": "0600"
+   },
+   {
+    "set": "slave zone left row 1=true",
+    "payload": "0001"
+   },
+   {
+    "set": "slave zone right row 1=true",
+    "payload": "0002"
+   },
+   {
+    "set": "slave zone left row 2=true",
+    "payload": "0004"
+   },
+   {
+    "set": "slave zone right row 2=true",
+    "payload": "0008"
+   },
+   {
+    "set": "slave zone left row 3=true",
+    "payload": "0010"
+   },
+   {
+    "set": "slave zone right row 3=true",
+    "payload": "0020"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 26,
+  "opcode": "SetGet",
+  "what": "Aircon popup time",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = popup time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "popup time=1",
+    "payload": "01"
+   },
+   {
+    "set": "popup time=2",
+    "payload": "02"
+   },
+   {
+    "set": "popup time=10",
+    "payload": "0a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "Aircon temp zone",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = temp value",
+   "temp unit: 1 → `00 01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "temp value=1",
+    "payload": "0100"
+   },
+   {
+    "set": "temp value=2",
+    "payload": "0200"
+   },
+   {
+    "set": "temp value=10",
+    "payload": "0a00"
+   },
+   {
+    "set": "temp unit=1",
+    "payload": "0001"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 28,
+  "opcode": "SetGet",
+  "what": "Aircon air volume",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = air volume"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "air volume=1",
+    "payload": "01"
+   },
+   {
+    "set": "air volume=2",
+    "payload": "02"
+   },
+   {
+    "set": "air volume=10",
+    "payload": "0a"
+   },
+   {
+    "set": "air volume regulated=1",
+    "payload": "00"
+   },
+   {
+    "set": "air volume regulated=2",
+    "payload": "00"
+   },
+   {
+    "set": "air volume regulated=10",
+    "payload": "00"
+   },
+   {
+    "set": "air volume auto=1",
+    "payload": "00"
+   },
+   {
+    "set": "air volume auto=2",
+    "payload": "00"
+   },
+   {
+    "set": "air volume auto=10",
+    "payload": "00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 29,
+  "opcode": "SetGet",
+  "what": "Aircon air volume",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = air volume regulated"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "air volume=1",
+    "payload": "00"
+   },
+   {
+    "set": "air volume=2",
+    "payload": "00"
+   },
+   {
+    "set": "air volume=10",
+    "payload": "00"
+   },
+   {
+    "set": "air volume regulated=1",
+    "payload": "01"
+   },
+   {
+    "set": "air volume regulated=2",
+    "payload": "02"
+   },
+   {
+    "set": "air volume regulated=10",
+    "payload": "0a"
+   },
+   {
+    "set": "air volume auto=1",
+    "payload": "00"
+   },
+   {
+    "set": "air volume auto=2",
+    "payload": "00"
+   },
+   {
+    "set": "air volume auto=10",
+    "payload": "00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 30,
+  "opcode": "SetGet",
+  "what": "Aircon air volume",
+  "bytes": "4",
+  "base": "00000000",
+  "fields": [
+   "air volume auto: 1 → `00 00 00 02`, 2 → `00 00 00 02`, 10 → `00 00 00 02`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume=1",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume=2",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume=10",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume regulated=1",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume regulated=2",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume regulated=10",
+    "payload": "00000000"
+   },
+   {
+    "set": "air volume auto=1",
+    "payload": "00000002"
+   },
+   {
+    "set": "air volume auto=2",
+    "payload": "00000002"
+   },
+   {
+    "set": "air volume auto=10",
+    "payload": "00000002"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 30,
+  "opcode": "SetGet",
+  "what": "Aircon air distribution",
+  "bytes": "4",
+  "base": "00000000",
+  "fields": [
+   "b0 = up",
+   "b1 = body",
+   "b2 = footwell",
+   "b3.0 automode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000"
+   },
+   {
+    "set": "up=1",
+    "payload": "01000000"
+   },
+   {
+    "set": "up=2",
+    "payload": "02000000"
+   },
+   {
+    "set": "up=10",
+    "payload": "0a000000"
+   },
+   {
+    "set": "body=1",
+    "payload": "00010000"
+   },
+   {
+    "set": "body=2",
+    "payload": "00020000"
+   },
+   {
+    "set": "body=10",
+    "payload": "000a0000"
+   },
+   {
+    "set": "footwell=1",
+    "payload": "00000100"
+   },
+   {
+    "set": "footwell=2",
+    "payload": "00000200"
+   },
+   {
+    "set": "footwell=10",
+    "payload": "00000a00"
+   },
+   {
+    "set": "indirect=1",
+    "payload": "00000000"
+   },
+   {
+    "set": "indirect=2",
+    "payload": "00000000"
+   },
+   {
+    "set": "indirect=10",
+    "payload": "00000000"
+   },
+   {
+    "set": "automode=true",
+    "payload": "00000001"
+   },
+   {
+    "set": "auto demand oriented=true",
+    "payload": "00000000"
+   },
+   {
+    "set": "side=1",
+    "payload": "00000000"
+   },
+   {
+    "set": "side=2",
+    "payload": "00000000"
+   },
+   {
+    "set": "side=10",
+    "payload": "00000000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 31,
+  "opcode": "SetGet",
+  "what": "Aircon seat heater",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = heater level"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=1",
+    "payload": "00"
+   },
+   {
+    "set": "state=2",
+    "payload": "00"
+   },
+   {
+    "set": "heater level=1",
+    "payload": "01"
+   },
+   {
+    "set": "heater level=2",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 32,
+  "opcode": "SetGet",
+  "what": "Aircon seat ventilation",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = ventilation level"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=1",
+    "payload": "00"
+   },
+   {
+    "set": "state=2",
+    "payload": "00"
+   },
+   {
+    "set": "ventilation level=1",
+    "payload": "01"
+   },
+   {
+    "set": "ventilation level=2",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 39,
+  "opcode": "SetGet",
+  "what": "Aircon rear control",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 rear control"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "rear control=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 41,
+  "opcode": "SetGet",
+  "what": "Aircon residual heat",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 heating"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "heating=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 42,
+  "opcode": "SetGet",
+  "what": "Aircon heater",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 heater"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "heater=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 45,
+  "opcode": "SetGet",
+  "what": "Aircon front window heater",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 front window heater"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "front window heater=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 46,
+  "opcode": "SetGet",
+  "what": "Aircon defrost",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 defrost"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "defrost=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 47,
+  "opcode": "SetGet",
+  "what": "Aircon suppress visualisation",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 suppress visualisation"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "suppress visualisation=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 48,
+  "opcode": "SetGet",
+  "what": "Aircon blower compensation",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 sds"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "sds=true",
+    "payload": "01"
+   },
+   {
+    "set": "tel=true",
+    "payload": "00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 1,
+  "df": "3.3",
+  "fct": 49,
+  "opcode": "SetGet",
+  "what": "Aircon AC",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 ac"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "ac=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "ACC gong state",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "ACC gong volume",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = volume"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "volume=1",
+    "payload": "01"
+   },
+   {
+    "set": "volume=2",
+    "payload": "02"
+   },
+   {
+    "set": "volume=10",
+    "payload": "0a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "ACC default mode",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "ACC default mode: 1 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "ACC default mode=1",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "ACC time gap",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = ACC time gap"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "ACC time gap=1",
+    "payload": "0100"
+   },
+   {
+    "set": "ACC time gap=2",
+    "payload": "0200"
+   },
+   {
+    "set": "ACC time gap=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "ACC driving program",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = program"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "program=1",
+    "payload": "0100"
+   },
+   {
+    "set": "program=2",
+    "payload": "0200"
+   },
+   {
+    "set": "program=3",
+    "payload": "0300"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "ACC curve assist",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "ACC speed limit adoption",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "ACC speed limit offset",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b0 = offset"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "offset=1",
+    "payload": "010000"
+   },
+   {
+    "set": "offset=2",
+    "payload": "020000"
+   },
+   {
+    "set": "offset=3",
+    "payload": "030000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "ACC traffic jam assist",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "ACC distance warning",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b0.0 system state",
+   "b1 = time gap"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "system state=true",
+    "payload": "010000"
+   },
+   {
+    "set": "time gap=1",
+    "payload": "000100"
+   },
+   {
+    "set": "time gap=2",
+    "payload": "000200"
+   },
+   {
+    "set": "time gap=10",
+    "payload": "000a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 5,
+  "df": "3.4",
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "ACC set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 6,
+  "df": null,
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Suspension control active profile",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b0 = profile"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "profile=1",
+    "payload": "010000"
+   },
+   {
+    "set": "profile=2",
+    "payload": "020000"
+   },
+   {
+    "set": "profile=3",
+    "payload": "030000"
+   },
+   {
+    "set": "profile=4",
+    "payload": "040000"
+   },
+   {
+    "set": "profile=5",
+    "payload": "050000"
+   },
+   {
+    "set": "profile=6",
+    "payload": "060000"
+   },
+   {
+    "set": "profile=7",
+    "payload": "070000"
+   },
+   {
+    "set": "profile=8",
+    "payload": "080000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 6,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Suspension control trailer mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "active=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 6,
+  "df": null,
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Suspension control car jack mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "active=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 6,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Suspension control loading mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "active=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 6,
+  "df": null,
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Suspension control lift mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "active=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 7,
+  "df": "4.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "RDK system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 7,
+  "df": "4.3",
+  "fct": 22,
+  "opcode": "StartResult",
+  "what": "RDK tire changed",
+  "bytes": "0",
+  "base": "",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": ""
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 7,
+  "df": "4.3",
+  "fct": 23,
+  "opcode": "StartResult",
+  "what": "RDK tire setup selected tire",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = position"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "position=1",
+    "payload": "0100"
+   },
+   {
+    "set": "position=2",
+    "payload": "0200"
+   },
+   {
+    "set": "position=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 7,
+  "df": "4.3",
+  "fct": 23,
+  "opcode": "StartResult",
+  "what": "RDK speed limit",
+  "bytes": "2",
+  "base": "ff00",
+  "fields": [
+   "b1 = speed limit"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "ff00"
+   },
+   {
+    "set": "speed limit=1",
+    "payload": "ff01"
+   },
+   {
+    "set": "speed limit=2",
+    "payload": "ff02"
+   },
+   {
+    "set": "speed limit=3",
+    "payload": "ff03"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 7,
+  "df": "4.3",
+  "fct": 23,
+  "opcode": "StartResult",
+  "what": "RDK pressure level",
+  "bytes": "2",
+  "base": "ff00",
+  "fields": [
+   "b1 = level"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "ff00"
+   },
+   {
+    "set": "level=1",
+    "payload": "ff01"
+   },
+   {
+    "set": "level=2",
+    "payload": "ff02"
+   },
+   {
+    "set": "level=3",
+    "payload": "ff03"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Int light set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Int light colour",
+  "bytes": "2",
+  "base": "0100",
+  "fields": [
+   "colour: 1 → `02 00`, 2 → `03 00`, 3 → `04 00`, 4 → `05 00`, 5 → `06 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0100"
+   },
+   {
+    "set": "colour=1",
+    "payload": "0200"
+   },
+   {
+    "set": "colour=2",
+    "payload": "0300"
+   },
+   {
+    "set": "colour=3",
+    "payload": "0400"
+   },
+   {
+    "set": "colour=4",
+    "payload": "0500"
+   },
+   {
+    "set": "colour=5",
+    "payload": "0600"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Int light state",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=1",
+    "payload": "0100"
+   },
+   {
+    "set": "state=2",
+    "payload": "0200"
+   },
+   {
+    "set": "state=3",
+    "payload": "0300"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Int light environment",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 environment"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "environment=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Int light temperature",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Int light speed",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 speed"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "speed=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Int light brightness",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b1 = brightness",
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "brightness=1",
+    "payload": "000100"
+   },
+   {
+    "set": "brightness=2",
+    "payload": "000200"
+   },
+   {
+    "set": "brightness=10",
+    "payload": "000a00"
+   },
+   {
+    "set": "state=true",
+    "payload": "010000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 31,
+  "opcode": "SetGet",
+  "what": "Int light active profile",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = profile"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "profile=1",
+    "payload": "0100"
+   },
+   {
+    "set": "profile=2",
+    "payload": "0200"
+   },
+   {
+    "set": "profile=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 32,
+  "opcode": "SetGet",
+  "what": "Int light ambient light color",
+  "bytes": "4",
+  "base": "00000000",
+  "fields": [
+   "b0 = base color red",
+   "b1 = base color green",
+   "b2 = base color blue"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000"
+   },
+   {
+    "set": "base color red=1",
+    "payload": "01000000"
+   },
+   {
+    "set": "base color red=2",
+    "payload": "02000000"
+   },
+   {
+    "set": "base color red=10",
+    "payload": "0a000000"
+   },
+   {
+    "set": "base color green=1",
+    "payload": "00010000"
+   },
+   {
+    "set": "base color green=2",
+    "payload": "00020000"
+   },
+   {
+    "set": "base color green=10",
+    "payload": "000a0000"
+   },
+   {
+    "set": "base color blue=1",
+    "payload": "00000100"
+   },
+   {
+    "set": "base color blue=2",
+    "payload": "00000200"
+   },
+   {
+    "set": "base color blue=10",
+    "payload": "00000a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 33,
+  "opcode": "SetGet",
+  "what": "Int light contour light color",
+  "bytes": "4",
+  "base": "00000000",
+  "fields": [
+   "b0 = base color red",
+   "b1 = base color green",
+   "b2 = base color blue"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000"
+   },
+   {
+    "set": "base color red=1",
+    "payload": "01000000"
+   },
+   {
+    "set": "base color red=2",
+    "payload": "02000000"
+   },
+   {
+    "set": "base color red=10",
+    "payload": "0a000000"
+   },
+   {
+    "set": "base color green=1",
+    "payload": "00010000"
+   },
+   {
+    "set": "base color green=2",
+    "payload": "00020000"
+   },
+   {
+    "set": "base color green=10",
+    "payload": "000a0000"
+   },
+   {
+    "set": "base color blue=1",
+    "payload": "00000100"
+   },
+   {
+    "set": "base color blue=2",
+    "payload": "00000200"
+   },
+   {
+    "set": "base color blue=10",
+    "payload": "00000a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 43,
+  "opcode": "SetGet",
+  "what": "Int light follow up time",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "time=1",
+    "payload": "0100"
+   },
+   {
+    "set": "time=2",
+    "payload": "0200"
+   },
+   {
+    "set": "time=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 8,
+  "df": "5.1",
+  "fct": 44,
+  "opcode": "SetGet",
+  "what": "Int light door contact",
+  "bytes": "2",
+  "base": "1800",
+  "fields": [
+   "b0.0 int light door contact"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "1800"
+   },
+   {
+    "set": "int light door contact=true",
+    "payload": "1900"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Ext light set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Ext light day light",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Ext light tourist",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Ext light coming home",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = time",
+   "b1.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "time=1",
+    "payload": "0100"
+   },
+   {
+    "set": "time=2",
+    "payload": "0200"
+   },
+   {
+    "set": "time=10",
+    "payload": "0a00"
+   },
+   {
+    "set": "state=true",
+    "payload": "0001"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Ext light leaving home",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = time",
+   "b1.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "time=1",
+    "payload": "0100"
+   },
+   {
+    "set": "time=2",
+    "payload": "0200"
+   },
+   {
+    "set": "time=10",
+    "payload": "0a00"
+   },
+   {
+    "set": "state=true",
+    "payload": "0001"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Ext light switch on sensitivity",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = config"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "config=1",
+    "payload": "0100"
+   },
+   {
+    "set": "config=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "Ext light motorway blinking",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b1 = time",
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "time=1",
+    "payload": "000100"
+   },
+   {
+    "set": "time=2",
+    "payload": "000200"
+   },
+   {
+    "set": "time=3",
+    "payload": "000300"
+   },
+   {
+    "set": "state=true",
+    "payload": "010000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "Ext light adaptive",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "Ext light head light system",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 26,
+  "opcode": "SetGet",
+  "what": "Ext light gliding light system",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "Ext light masked high beam",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 29,
+  "opcode": "SetGet",
+  "what": "Ext light automatic light",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 ext light auto rain",
+   "b0.1 ext light auto speed"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "ext light auto rain=true",
+    "payload": "0100"
+   },
+   {
+    "set": "ext light auto speed=true",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 30,
+  "opcode": "SetGet",
+  "what": "Ext light laser light",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 9,
+  "df": "5.4",
+  "fct": 31,
+  "opcode": "SetGet",
+  "what": "Ext light headlight range",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = lowering"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "lowering=1",
+    "payload": "0100"
+   },
+   {
+    "set": "lowering=2",
+    "payload": "0200"
+   },
+   {
+    "set": "lowering=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "PDC frequence front",
+  "bytes": "2",
+  "base": null,
+  "fields": [
+   "frequence: 1 → `01 00`, 2 → `02 00`"
+  ],
+  "samples": [
+   {
+    "set": "frequence=1",
+    "payload": "0100"
+   },
+   {
+    "set": "frequence=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "PDC volume front",
+  "bytes": "2",
+  "base": null,
+  "fields": [
+   "volume: 1 → `02 01`, 2 → `02 02`"
+  ],
+  "samples": [
+   {
+    "set": "volume=1",
+    "payload": "0201"
+   },
+   {
+    "set": "volume=2",
+    "payload": "0202"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "PDC frequence rear",
+  "bytes": "2",
+  "base": null,
+  "fields": [
+   "frequence: 1 → `01 00`, 2 → `02 00`"
+  ],
+  "samples": [
+   {
+    "set": "frequence=1",
+    "payload": "0100"
+   },
+   {
+    "set": "frequence=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "PDC volume rear",
+  "bytes": "2",
+  "base": null,
+  "fields": [
+   "volume: 1 → `02 01`, 2 → `02 02`"
+  ],
+  "samples": [
+   {
+    "set": "volume=1",
+    "payload": "0201"
+   },
+   {
+    "set": "volume=2",
+    "payload": "0202"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "PDC mute",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 mute"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "mute=true",
+    "payload": "01"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "PDC default parking mode",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "defaultparking mode: 1 → `01`, 2 → `01`, 3 → `01`, 15 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "defaultparking mode=1",
+    "payload": "01"
+   },
+   {
+    "set": "defaultparking mode=2",
+    "payload": "01"
+   },
+   {
+    "set": "defaultparking mode=3",
+    "payload": "01"
+   },
+   {
+    "set": "defaultparking mode=15",
+    "payload": "01"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "PDC system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "10"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "Pdc set factory default",
+  "bytes": "1",
+  "base": "11",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "11"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 10,
+  "df": "3.3",
+  "fct": 26,
+  "opcode": "SetGet",
+  "what": "PDC auto activation",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 auto activation"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "auto activation=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "VPS system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "10"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "VPS set factory default",
+  "bytes": "1",
+  "base": "11",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "11"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "VPS follow up time",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "time=1",
+    "payload": "01"
+   },
+   {
+    "set": "time=2",
+    "payload": "02"
+   },
+   {
+    "set": "time=10",
+    "payload": "0a"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "VPS default mode RV",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = vps screen",
+   "b1 = vps mode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "vps screen=1",
+    "payload": "0100"
+   },
+   {
+    "set": "vps screen=2",
+    "payload": "0200"
+   },
+   {
+    "set": "vps screen=15",
+    "payload": "0f00"
+   },
+   {
+    "set": "vps mode=1",
+    "payload": "0001"
+   },
+   {
+    "set": "vps mode=2",
+    "payload": "0002"
+   },
+   {
+    "set": "vps mode=7",
+    "payload": "0007"
+   },
+   {
+    "set": "vps mode=8",
+    "payload": "0008"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "VPS default mode FV",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = vps screen",
+   "b1 = vps mode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "vps screen=1",
+    "payload": "0100"
+   },
+   {
+    "set": "vps screen=2",
+    "payload": "0200"
+   },
+   {
+    "set": "vps screen=15",
+    "payload": "0f00"
+   },
+   {
+    "set": "vps mode=1",
+    "payload": "0001"
+   },
+   {
+    "set": "vps mode=3",
+    "payload": "0003"
+   },
+   {
+    "set": "vps mode=7",
+    "payload": "0007"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "VPS default mode SV",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = vps screen",
+   "b1 = vps mode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "vps screen=1",
+    "payload": "0100"
+   },
+   {
+    "set": "vps screen=2",
+    "payload": "0200"
+   },
+   {
+    "set": "vps screen=15",
+    "payload": "0f00"
+   },
+   {
+    "set": "vps mode=3",
+    "payload": "0003"
+   },
+   {
+    "set": "vps mode=4",
+    "payload": "0004"
+   },
+   {
+    "set": "vps mode=5",
+    "payload": "0005"
+   },
+   {
+    "set": "vps mode=6",
+    "payload": "0006"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "VPS default mode BV",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = vps screen",
+   "b1 = vps mode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "vps screen=1",
+    "payload": "0100"
+   },
+   {
+    "set": "vps screen=2",
+    "payload": "0200"
+   },
+   {
+    "set": "vps screen=15",
+    "payload": "0f00"
+   },
+   {
+    "set": "vps mode=1",
+    "payload": "0001"
+   },
+   {
+    "set": "vps mode=3",
+    "payload": "0003"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "VPS default view",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0 = view"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "view=2",
+    "payload": "02"
+   },
+   {
+    "set": "view=3",
+    "payload": "03"
+   },
+   {
+    "set": "view=4",
+    "payload": "04"
+   },
+   {
+    "set": "view=5",
+    "payload": "05"
+   },
+   {
+    "set": "view=6",
+    "payload": "06"
+   },
+   {
+    "set": "view=15",
+    "payload": "0f"
+   },
+   {
+    "set": "view=255",
+    "payload": "ff"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "VPS color",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = color"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "color=1",
+    "payload": "0100"
+   },
+   {
+    "set": "color=2",
+    "payload": "0200"
+   },
+   {
+    "set": "color=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "VPS contrast",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = contrast"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "contrast=1",
+    "payload": "0100"
+   },
+   {
+    "set": "contrast=2",
+    "payload": "0200"
+   },
+   {
+    "set": "contrast=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "VPS brightness",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = brightness"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "brightness=1",
+    "payload": "0100"
+   },
+   {
+    "set": "brightness=2",
+    "payload": "0200"
+   },
+   {
+    "set": "brightness=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "VPS dynamic parking mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 parkbox",
+   "b0.1 parallel to road",
+   "b0.2 offroad",
+   "b0.3 right sideview",
+   "b0.4 left sideview",
+   "b0.5 crossing",
+   "b0.6 trailer assist"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "parkbox=true",
+    "payload": "0100"
+   },
+   {
+    "set": "parallel to road=true",
+    "payload": "0200"
+   },
+   {
+    "set": "offroad=true",
+    "payload": "0400"
+   },
+   {
+    "set": "right sideview=true",
+    "payload": "0800"
+   },
+   {
+    "set": "left sideview=true",
+    "payload": "1000"
+   },
+   {
+    "set": "crossing=true",
+    "payload": "2000"
+   },
+   {
+    "set": "trailer assist=true",
+    "payload": "4000"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 11,
+  "df": "5.1",
+  "fct": 28,
+  "opcode": "SetGet",
+  "what": "VPS OPS overlay",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 rearview",
+   "b0.1 frontview",
+   "b0.2 sideview",
+   "b0.3 birdview"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "rearview=true",
+    "payload": "0100"
+   },
+   {
+    "set": "frontview=true",
+    "payload": "0200"
+   },
+   {
+    "set": "sideview=true",
+    "payload": "0400"
+   },
+   {
+    "set": "birdview=true",
+    "payload": "0800"
+   }
+  ],
+  "status": "tested"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Wiper set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Wiper service position",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "active=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Wiper winter position",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 active"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "active=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Wiper rear wiping",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Wiper tears wiping",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Wiper rain sensor on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Wiper rain sensor config",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = rain sensor config"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "rain sensor config=1",
+    "payload": "01"
+   },
+   {
+    "set": "rain sensor config=2",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 12,
+  "df": "3.1",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "Easy entry steering column",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Door locking set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Door locking comfort open settings",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 driver window",
+   "b0.1 codriver window",
+   "b0.2 driver rear window",
+   "b0.3 codriver rear window",
+   "b0.4 sun roof",
+   "b0.5 rear blind"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "driver window=true",
+    "payload": "0100"
+   },
+   {
+    "set": "codriver window=true",
+    "payload": "0200"
+   },
+   {
+    "set": "driver rear window=true",
+    "payload": "0400"
+   },
+   {
+    "set": "codriver rear window=true",
+    "payload": "0800"
+   },
+   {
+    "set": "sun roof=true",
+    "payload": "1000"
+   },
+   {
+    "set": "rear blind=true",
+    "payload": "2000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Door locking cl boot open",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 boot open"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "boot open=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Door locking unlocking mode",
+  "bytes": "2",
+  "base": null,
+  "fields": [
+   "mode: 1 → `01 00`, 2 → `01 01`, 3 → `01 02`"
+  ],
+  "samples": [
+   {
+    "set": "mode=1",
+    "payload": "0100"
+   },
+   {
+    "set": "mode=2",
+    "payload": "0101"
+   },
+   {
+    "set": "mode=3",
+    "payload": "0102"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Door locking cl boot lock",
+  "bytes": "2",
+  "base": "0102",
+  "fields": [
+   "b0.1 boot lock"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0102"
+   },
+   {
+    "set": "boot lock=true",
+    "payload": "0302"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Door locking rain closing",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 rain closing"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "rain closing=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Door locking theft warning settings",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 interior",
+   "b0.1 decline"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "interior=true",
+    "payload": "0100"
+   },
+   {
+    "set": "decline=true",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Door locking confirmation",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 confirmation"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "confirmation=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Door locking rear blind",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 rear blind button",
+   "b0.1 rear blind sun protection",
+   "b0.2 rear blind reverse gear"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "rear blind button=true",
+    "payload": "01"
+   },
+   {
+    "set": "rear blind sun protection=true",
+    "payload": "02"
+   },
+   {
+    "set": "rear blind reverse gear=true",
+    "payload": "04"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "Door locking turn ind repeat",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "Door locking auto lock",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = auto lock"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "auto lock=1",
+    "payload": "0100"
+   },
+   {
+    "set": "auto lock=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "Door locking auto unlock",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 auto unlock"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "auto unlock=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "Door locking mirror protection",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 mirror protection"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "mirror protection=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 29,
+  "opcode": "SetGet",
+  "what": "Door locking boot open",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 boot open"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "boot open=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 30,
+  "opcode": "SetGet",
+  "what": "Door locking boot close",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 boot close"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "boot close=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 31,
+  "opcode": "StartResult",
+  "what": "Door locking remote lock unlock",
+  "bytes": "6",
+  "base": "000000000000",
+  "fields": [
+   "data: \"A\" → `01 41 00 00 00 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000000000"
+   },
+   {
+    "set": "data=\"A\"",
+    "payload": "014100000000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 31,
+  "opcode": "Abort",
+  "what": "Door locking remote lock unlock",
+  "bytes": "0",
+  "base": "",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": ""
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 33,
+  "opcode": "Set",
+  "what": "Door locking remote lock unlock signature",
+  "bytes": "1,2",
+  "base": "00",
+  "fields": [
+   "data: \"A\" → `01 41`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "data=\"A\"",
+    "payload": "0141"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 34,
+  "opcode": "SetGet",
+  "what": "Door locking remote horn",
+  "bytes": "3",
+  "base": "010000",
+  "fields": [
+   "b1 = time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "010000"
+   },
+   {
+    "set": "time=1",
+    "payload": "010100"
+   },
+   {
+    "set": "time=2",
+    "payload": "010200"
+   },
+   {
+    "set": "time=10",
+    "payload": "010a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 35,
+  "opcode": "SetGet",
+  "what": "Door locking remote blinking",
+  "bytes": "3",
+  "base": "010000",
+  "fields": [
+   "b1 = time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "010000"
+   },
+   {
+    "set": "time=1",
+    "payload": "010100"
+   },
+   {
+    "set": "time=2",
+    "payload": "010200"
+   },
+   {
+    "set": "time=10",
+    "payload": "010a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 37,
+  "opcode": "SetGet",
+  "what": "Door locking active user",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = user reference"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "user reference=1",
+    "payload": "01"
+   },
+   {
+    "set": "user reference=2",
+    "payload": "02"
+   },
+   {
+    "set": "user reference=10",
+    "payload": "0a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 38,
+  "opcode": "SetGet",
+  "what": "Door locking user profile on off",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 handling",
+   "b0.1 auto key assignment",
+   "b0.2 temporary key assignment"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "handling=true",
+    "payload": "0100"
+   },
+   {
+    "set": "auto key assignment=true",
+    "payload": "0200"
+   },
+   {
+    "set": "temporary key assignment=true",
+    "payload": "0400"
+   },
+   {
+    "set": "atne in motion=true",
+    "payload": "0000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 39,
+  "opcode": "StartResult",
+  "what": "Door locking user profile control",
+  "bytes": "4",
+  "base": "21000000",
+  "fields": [
+   "control: 2 → `22 00 00 00`, 3 → `23 00 00 00`, 4 → `24 00 00 00`, 5 → `25 00 00 00`, 255 → `FF 00 00 00`",
+   "b1 = target profile"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "21000000"
+   },
+   {
+    "set": "control=2",
+    "payload": "22000000"
+   },
+   {
+    "set": "control=3",
+    "payload": "23000000"
+   },
+   {
+    "set": "control=4",
+    "payload": "24000000"
+   },
+   {
+    "set": "control=5",
+    "payload": "25000000"
+   },
+   {
+    "set": "control=255",
+    "payload": "ff000000"
+   },
+   {
+    "set": "target profile=1",
+    "payload": "21010000"
+   },
+   {
+    "set": "target profile=2",
+    "payload": "21020000"
+   },
+   {
+    "set": "target profile=10",
+    "payload": "210a0000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 39,
+  "opcode": "Abort",
+  "what": "Door locking user profile control",
+  "bytes": "0",
+  "base": "",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": ""
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 41,
+  "opcode": "SetGet",
+  "what": "Door locking window auto close",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 control"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "control=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 13,
+  "df": "4.5",
+  "fct": 42,
+  "opcode": "SetGet",
+  "what": "Doorlocking blinds control",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "control: 1 → `10 00`, 2 → `20 00`, 3 → `30 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "control=1",
+    "payload": "1000"
+   },
+   {
+    "set": "control=2",
+    "payload": "2000"
+   },
+   {
+    "set": "control=3",
+    "payload": "3000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Mirror set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Mirror lowering",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "enable=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Mirror sync adjust",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0.1 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "enable=true",
+    "payload": "03"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Mirror folding",
+  "bytes": "1",
+  "base": "03",
+  "fields": [
+   "b0.2 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "03"
+   },
+   {
+    "set": "enable=true",
+    "payload": "07"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Mirror dimming",
+  "bytes": "1",
+  "base": "07",
+  "fields": [
+   "b0.3 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "07"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0f"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 14,
+  "df": "3.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Mirror heating",
+  "bytes": "1",
+  "base": "0f",
+  "fields": [
+   "b0.4 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0f"
+   },
+   {
+    "set": "enable=true",
+    "payload": "1f"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 16,
+  "df": "4.5",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Seat set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 16,
+  "df": "4.5",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Seat radio key automatic",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 16,
+  "df": "4.5",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "Seat easy entry front left",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 16,
+  "df": "4.5",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "Seat easy entry front right",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0.1 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "state=true",
+    "payload": "03"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 17,
+  "df": null,
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Clock date",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b0 = year",
+   "b1 = month",
+   "b2 = day"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "year=1",
+    "payload": "010000"
+   },
+   {
+    "set": "year=2",
+    "payload": "020000"
+   },
+   {
+    "set": "year=10",
+    "payload": "0a0000"
+   },
+   {
+    "set": "month=1",
+    "payload": "000100"
+   },
+   {
+    "set": "month=2",
+    "payload": "000200"
+   },
+   {
+    "set": "month=10",
+    "payload": "000a00"
+   },
+   {
+    "set": "day=1",
+    "payload": "000001"
+   },
+   {
+    "set": "day=2",
+    "payload": "000002"
+   },
+   {
+    "set": "day=10",
+    "payload": "00000a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 17,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Clock time",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b0 = hours",
+   "b1 = minutes",
+   "b2 = seconds"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "hours=1",
+    "payload": "010000"
+   },
+   {
+    "set": "hours=2",
+    "payload": "020000"
+   },
+   {
+    "set": "hours=10",
+    "payload": "0a0000"
+   },
+   {
+    "set": "minutes=1",
+    "payload": "000100"
+   },
+   {
+    "set": "minutes=2",
+    "payload": "000200"
+   },
+   {
+    "set": "minutes=10",
+    "payload": "000a00"
+   },
+   {
+    "set": "seconds=1",
+    "payload": "000001"
+   },
+   {
+    "set": "seconds=2",
+    "payload": "000002"
+   },
+   {
+    "set": "seconds=10",
+    "payload": "00000a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 17,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Clock time zone offset",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "offset: 1.0 → `01 00 00`, 20.5 → `14 1E 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "offset=1.0",
+    "payload": "010000"
+   },
+   {
+    "set": "offset=20.5",
+    "payload": "141e00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 17,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Clock day light saving",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 17,
+  "df": null,
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "Clock GPS sync data",
+  "bytes": "6",
+  "base": "000000000000",
+  "fields": [
+   "b3 = hours",
+   "b4 = minutes",
+   "b5 = seconds",
+   "b0 = year",
+   "b1 = month",
+   "b2 = day"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000000000"
+   },
+   {
+    "set": "hours=1",
+    "payload": "000000010000"
+   },
+   {
+    "set": "hours=2",
+    "payload": "000000020000"
+   },
+   {
+    "set": "hours=10",
+    "payload": "0000000a0000"
+   },
+   {
+    "set": "minutes=1",
+    "payload": "000000000100"
+   },
+   {
+    "set": "minutes=2",
+    "payload": "000000000200"
+   },
+   {
+    "set": "minutes=10",
+    "payload": "000000000a00"
+   },
+   {
+    "set": "seconds=1",
+    "payload": "000000000001"
+   },
+   {
+    "set": "seconds=2",
+    "payload": "000000000002"
+   },
+   {
+    "set": "seconds=10",
+    "payload": "00000000000a"
+   },
+   {
+    "set": "time zone=1.0",
+    "payload": "000000000000"
+   },
+   {
+    "set": "time zone=20.5",
+    "payload": "000000000000"
+   },
+   {
+    "set": "summer time=true",
+    "payload": "000000000000"
+   },
+   {
+    "set": "year=1",
+    "payload": "010000000000"
+   },
+   {
+    "set": "year=2",
+    "payload": "020000000000"
+   },
+   {
+    "set": "year=10",
+    "payload": "0a0000000000"
+   },
+   {
+    "set": "month=1",
+    "payload": "000100000000"
+   },
+   {
+    "set": "month=2",
+    "payload": "000200000000"
+   },
+   {
+    "set": "month=10",
+    "payload": "000a00000000"
+   },
+   {
+    "set": "day=1",
+    "payload": "000001000000"
+   },
+   {
+    "set": "day=2",
+    "payload": "000002000000"
+   },
+   {
+    "set": "day=10",
+    "payload": "00000a000000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Um set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Temperature unit",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "temperature unit: 1 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "temperature unit=1",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Distance unit",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "distance unit: 1 → `10`, 15 → `F0`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "distance unit=1",
+    "payload": "10"
+   },
+   {
+    "set": "distance unit=15",
+    "payload": "f0"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Speed unit",
+  "bytes": "1",
+  "base": "f0",
+  "fields": [
+   "speed unit: 1 → `F1`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "f0"
+   },
+   {
+    "set": "speed unit=1",
+    "payload": "f1"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Pressure unit",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = pressure unit"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "pressure unit=1",
+    "payload": "01"
+   },
+   {
+    "set": "pressure unit=2",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Volume unit",
+  "bytes": "1",
+  "base": null,
+  "fields": [
+   "volume unit: 2 → `00`, 3 → `01`, 4 → `02`"
+  ],
+  "samples": [
+   {
+    "set": "volume unit=2",
+    "payload": "00"
+   },
+   {
+    "set": "volume unit=3",
+    "payload": "01"
+   },
+   {
+    "set": "volume unit=4",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Clock format",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "clock format: 1 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "clock format=1",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Date format",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "date format: 1 → `11`, 2 → `21`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "date format=1",
+    "payload": "11"
+   },
+   {
+    "set": "date format=2",
+    "payload": "21"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "Consumption petrol unit",
+  "bytes": "1",
+  "base": "02",
+  "fields": [
+   "consumption petrol unit: 1 → `03`, 3 → `00`, 4 → `01`, 6 → `00`, 7 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "02"
+   },
+   {
+    "set": "consumption petrol unit=1",
+    "payload": "03"
+   },
+   {
+    "set": "consumption petrol unit=3",
+    "payload": "00"
+   },
+   {
+    "set": "consumption petrol unit=4",
+    "payload": "01"
+   },
+   {
+    "set": "consumption petrol unit=6",
+    "payload": "00"
+   },
+   {
+    "set": "consumption petrol unit=7",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "Consumption gas unit",
+  "bytes": "1",
+  "base": "02",
+  "fields": [
+   "consumption gas unit: 1 → `03`, 3 → `00`, 4 → `01`, 6 → `00`, 7 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "02"
+   },
+   {
+    "set": "consumption gas unit=1",
+    "payload": "03"
+   },
+   {
+    "set": "consumption gas unit=3",
+    "payload": "00"
+   },
+   {
+    "set": "consumption gas unit=4",
+    "payload": "01"
+   },
+   {
+    "set": "consumption gas unit=6",
+    "payload": "00"
+   },
+   {
+    "set": "consumption gas unit=7",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "Consumption electric unit",
+  "bytes": "1",
+  "base": "02",
+  "fields": [
+   "consumption electric unit: 1 → `03`, 3 → `00`, 4 → `01`, 6 → `00`, 7 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "02"
+   },
+   {
+    "set": "consumption electric unit=1",
+    "payload": "03"
+   },
+   {
+    "set": "consumption electric unit=3",
+    "payload": "00"
+   },
+   {
+    "set": "consumption electric unit=4",
+    "payload": "01"
+   },
+   {
+    "set": "consumption electric unit=6",
+    "payload": "00"
+   },
+   {
+    "set": "consumption electric unit=7",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 26,
+  "opcode": "SetGet",
+  "what": "Skin",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = skin"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "skin=1",
+    "payload": "0100"
+   },
+   {
+    "set": "skin=2",
+    "payload": "0200"
+   },
+   {
+    "set": "skin=255",
+    "payload": "ff00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 19,
+  "df": null,
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "Weight unit",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "unit: 1 → `01 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "unit=1",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 23,
+  "df": "3.1",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Charisma set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 23,
+  "df": "3.1",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Charisma active profile",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0 = profile"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "profile=2",
+    "payload": "02"
+   },
+   {
+    "set": "profile=3",
+    "payload": "03"
+   },
+   {
+    "set": "profile=4",
+    "payload": "04"
+   },
+   {
+    "set": "profile=5",
+    "payload": "05"
+   },
+   {
+    "set": "profile=6",
+    "payload": "06"
+   },
+   {
+    "set": "profile=7",
+    "payload": "07"
+   },
+   {
+    "set": "profile=8",
+    "payload": "08"
+   },
+   {
+    "set": "profile=9",
+    "payload": "09"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 23,
+  "df": "3.1",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Charisma trailer setting",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "b1.0 trailer setting"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "trailer setting=true",
+    "payload": "000100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 23,
+  "df": "3.1",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "Charisma prog button",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 button 1",
+   "b0.1 button 2",
+   "b0.2 button 3",
+   "b0.3 button 4",
+   "b0.4 button 5"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "button 1=true",
+    "payload": "01"
+   },
+   {
+    "set": "button 2=true",
+    "payload": "02"
+   },
+   {
+    "set": "button 3=true",
+    "payload": "04"
+   },
+   {
+    "set": "button 4=true",
+    "payload": "08"
+   },
+   {
+    "set": "button 5=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 23,
+  "df": "3.1",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "Charisma active operation mode",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "b0 = operation mode"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "operation mode=2",
+    "payload": "02"
+   },
+   {
+    "set": "operation mode=3",
+    "payload": "03"
+   },
+   {
+    "set": "operation mode=4",
+    "payload": "04"
+   },
+   {
+    "set": "operation mode=5",
+    "payload": "05"
+   },
+   {
+    "set": "operation mode=6",
+    "payload": "06"
+   },
+   {
+    "set": "operation mode=255",
+    "payload": "ff"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "LDW HCA set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "LDW HCA system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "LDW steering wheel vibration",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = vibration"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "vibration=1",
+    "payload": "0100"
+   },
+   {
+    "set": "vibration=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "LDW warning time",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = warning"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "warning=1",
+    "payload": "0100"
+   },
+   {
+    "set": "warning=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "HCA tolerance level",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = HCA tolerance level"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "HCA tolerance level=1",
+    "payload": "0100"
+   },
+   {
+    "set": "HCA tolerance level=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 25,
+  "df": "4.0",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "HCA intervention style",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = HCA intervention style"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "HCA intervention style=1",
+    "payload": "0100"
+   },
+   {
+    "set": "HCA intervention style=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "SWA frequency",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "SWA frequency: 1 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "SWA frequency=1",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "SWA brightness",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = brightness"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "brightness=1",
+    "payload": "0100"
+   },
+   {
+    "set": "brightness=2",
+    "payload": "0200"
+   },
+   {
+    "set": "brightness=3",
+    "payload": "0300"
+   },
+   {
+    "set": "brightness=4",
+    "payload": "0400"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "SWA warning time",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = time"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "time=1",
+    "payload": "0100"
+   },
+   {
+    "set": "time=2",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "SWA system",
+  "bytes": "1",
+  "base": "01",
+  "fields": [
+   "system: 1 → `00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   },
+   {
+    "set": "system=1",
+    "payload": "00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "SWA gong state",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 SWA gong state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "SWA gong state=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "SWA gong volume",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = SWA gong volume"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "SWA gong volume=1",
+    "payload": "01"
+   },
+   {
+    "set": "SWA gong volume=2",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 23,
+  "opcode": "SetGet",
+  "what": "SWA RCTA",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 26,
+  "df": "3.1",
+  "fct": 25,
+  "opcode": "SetGet",
+  "what": "SWA exit assist",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "AWV system",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "state: 1 → `01`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=1",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "AWV set factory default",
+  "bytes": "1",
+  "base": "03",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "03"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "AWV gong",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 AWV gong"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "AWV gong=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "AWV gong volume",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0 = AWV gong volume"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "AWV gong volume=1",
+    "payload": "01"
+   },
+   {
+    "set": "AWV gong volume=2",
+    "payload": "02"
+   },
+   {
+    "set": "AWV gong volume=10",
+    "payload": "0a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "AWV warning",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 AWV warning"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "AWV warning=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "AWV brake jerk",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 AWV brake jerk"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "AWV brake jerk=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "AWV emergency brake",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 target brake",
+   "b0.1 auto brake"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "target brake=true",
+    "payload": "01"
+   },
+   {
+    "set": "auto brake=true",
+    "payload": "02"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 21,
+  "opcode": "SetGet",
+  "what": "AWV distance warning",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.0 AWV distance warning"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "AWV distance warning=true",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 27,
+  "df": "4.3",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "AWV warning timegap",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = AWV warning timegap"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "AWV warning timegap=1",
+    "payload": "0100"
+   },
+   {
+    "set": "AWV warning timegap=2",
+    "payload": "0200"
+   },
+   {
+    "set": "AWV warning timegap=3",
+    "payload": "0300"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 29,
+  "df": "3.3",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "Hybrid target range",
+  "bytes": "3",
+  "base": "000000",
+  "fields": [
+   "range: 1 → `00 00 00`, 2 → `00 00 00`, 10 → `00 02 00`",
+   "b2 = unit"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000"
+   },
+   {
+    "set": "range=1",
+    "payload": "000000"
+   },
+   {
+    "set": "range=2",
+    "payload": "000000"
+   },
+   {
+    "set": "range=10",
+    "payload": "000200"
+   },
+   {
+    "set": "unit=1",
+    "payload": "000001"
+   },
+   {
+    "set": "unit=15",
+    "payload": "00000f"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 29,
+  "df": "3.3",
+  "fct": 24,
+  "opcode": "SetGet",
+  "what": "Hybrid active pedal",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Rgs set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "RGS belt pretensioner data front",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 left",
+   "b0.1 right"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "left=true",
+    "payload": "0100"
+   },
+   {
+    "set": "right=true",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "RGS belt pretensioner data rear",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 left",
+   "b0.1 right"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "left=true",
+    "payload": "0100"
+   },
+   {
+    "set": "right=true",
+    "payload": "0200"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "RGS pre crash system",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "RGS pre sense system",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "RGS pre sense warning",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "state: 1 → `01 00`, 2 → `03 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=1",
+    "payload": "0100"
+   },
+   {
+    "set": "state=2",
+    "payload": "0300"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 31,
+  "df": null,
+  "fct": 22,
+  "opcode": "Set",
+  "what": "RGS local hazard information",
+  "bytes": "6",
+  "base": "000000000000",
+  "fields": [
+   "b0 = event ID",
+   "b1 = event type",
+   "b2 = event quality",
+   "distance value: 1.0 → `00 00 00 E8 03 00`, 20.5 → `00 00 00 00 00 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "000000000000"
+   },
+   {
+    "set": "event ID=1",
+    "payload": "010000000000"
+   },
+   {
+    "set": "event ID=2",
+    "payload": "020000000000"
+   },
+   {
+    "set": "event ID=10",
+    "payload": "0a0000000000"
+   },
+   {
+    "set": "event type=1",
+    "payload": "000100000000"
+   },
+   {
+    "set": "event type=2",
+    "payload": "000200000000"
+   },
+   {
+    "set": "event type=3",
+    "payload": "000300000000"
+   },
+   {
+    "set": "event type=4",
+    "payload": "000400000000"
+   },
+   {
+    "set": "event quality=1",
+    "payload": "000001000000"
+   },
+   {
+    "set": "event quality=2",
+    "payload": "000002000000"
+   },
+   {
+    "set": "event quality=3",
+    "payload": "000003000000"
+   },
+   {
+    "set": "event quality=4",
+    "payload": "000004000000"
+   },
+   {
+    "set": "event quality=5",
+    "payload": "000005000000"
+   },
+   {
+    "set": "event quality=6",
+    "payload": "000006000000"
+   },
+   {
+    "set": "event quality=7",
+    "payload": "000007000000"
+   },
+   {
+    "set": "distance value state=1",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance value state=2",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance value state=3",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance value state=4",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance value state=5",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance value=1.0",
+    "payload": "000000e80300"
+   },
+   {
+    "set": "distance value=20.5",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance unit=1",
+    "payload": "000000000000"
+   },
+   {
+    "set": "distance unit=15",
+    "payload": "000000000000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 33,
+  "df": "3.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "TSD system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 activity"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "activity=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 33,
+  "df": "3.3",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Tsd set factory default",
+  "bytes": "1",
+  "base": "11",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "11"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 33,
+  "df": "3.3",
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "TSD road sign filter",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 trailer limits"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "trailer limits=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 33,
+  "df": "3.3",
+  "fct": 20,
+  "opcode": "SetGet",
+  "what": "TSD speed warning threshold",
+  "bytes": "4",
+  "base": "00000000",
+  "fields": [
+   "b0.0 state",
+   "speed value: 1.0 → `00 01 00 00`, 20.5 → `00 14 00 00`",
+   "speed unit: 1 → `00 00 01 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000"
+   },
+   {
+    "set": "state=true",
+    "payload": "01000000"
+   },
+   {
+    "set": "speed value state=1",
+    "payload": "00000000"
+   },
+   {
+    "set": "speed value state=2",
+    "payload": "00000000"
+   },
+   {
+    "set": "speed value state=3",
+    "payload": "00000000"
+   },
+   {
+    "set": "speed value state=4",
+    "payload": "00000000"
+   },
+   {
+    "set": "speed value state=5",
+    "payload": "00000000"
+   },
+   {
+    "set": "speed value=1.0",
+    "payload": "00010000"
+   },
+   {
+    "set": "speed value=20.5",
+    "payload": "00140000"
+   },
+   {
+    "set": "speed unit=1",
+    "payload": "00000100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 33,
+  "df": "3.3",
+  "fct": 22,
+  "opcode": "SetGet",
+  "what": "TSD speed warning acoustics",
+  "bytes": "2",
+  "base": "1800",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "1800"
+   },
+   {
+    "set": "state=true",
+    "payload": "1900"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 34,
+  "df": "3.0",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "MKE system on off",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 activity"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "activity=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 34,
+  "df": "3.0",
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "MKE set factory default",
+  "bytes": "1",
+  "base": "11",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "11"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 35,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Bcme set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 35,
+  "df": null,
+  "fct": 18,
+  "opcode": "Ack",
+  "what": "BCmE live tip",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = live tip",
+   "b1.0 confirmation"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "live tip=1",
+    "payload": "0100"
+   },
+   {
+    "set": "live tip=2",
+    "payload": "0200"
+   },
+   {
+    "set": "live tip=3",
+    "payload": "0300"
+   },
+   {
+    "set": "live tip=4",
+    "payload": "0400"
+   },
+   {
+    "set": "live tip=5",
+    "payload": "0500"
+   },
+   {
+    "set": "live tip=6",
+    "payload": "0600"
+   },
+   {
+    "set": "live tip=7",
+    "payload": "0700"
+   },
+   {
+    "set": "live tip=8",
+    "payload": "0800"
+   },
+   {
+    "set": "confirmation=true",
+    "payload": "0001"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 37,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "Battery control set factory default",
+  "bytes": "1",
+  "base": "01",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "01"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 37,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Battery control timer state",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 timer 1",
+   "b0.1 timer 2",
+   "b0.2 timer 3",
+   "b0.3 timer 4"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "timer 1=true",
+    "payload": "0100"
+   },
+   {
+    "set": "timer 2=true",
+    "payload": "0200"
+   },
+   {
+    "set": "timer 3=true",
+    "payload": "0400"
+   },
+   {
+    "set": "timer 4=true",
+    "payload": "0800"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 37,
+  "df": null,
+  "fct": 24,
+  "opcode": "StartResult",
+  "what": "Battery control immediately",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = ref profile ID",
+   "b1 = control"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "ref profile ID=1",
+    "payload": "0100"
+   },
+   {
+    "set": "ref profile ID=2",
+    "payload": "0200"
+   },
+   {
+    "set": "ref profile ID=10",
+    "payload": "0a00"
+   },
+   {
+    "set": "control=1",
+    "payload": "0001"
+   },
+   {
+    "set": "control=2",
+    "payload": "0002"
+   },
+   {
+    "set": "control=10",
+    "payload": "000a"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 37,
+  "df": null,
+  "fct": 27,
+  "opcode": "SetGet",
+  "what": "Battery control past error reason",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "reset: 1 → `01 00`"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "reset=1",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 37,
+  "df": null,
+  "fct": 29,
+  "opcode": "SetGet",
+  "what": "Battery control remaining charge time",
+  "bytes": "7",
+  "base": "00000000000000",
+  "fields": [
+   "b0 = time 1 mode",
+   "b1 = time 1 target SOC",
+   "time 2 mode: 1 → `10 00 00 00 00 00 00`, 2 → `20 00 00 00 00 00 00`, 15 → `F0 00 00 00 00 00 00`",
+   "b2 = time 2 target SOC"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00000000000000"
+   },
+   {
+    "set": "time 1 mode=1",
+    "payload": "01000000000000"
+   },
+   {
+    "set": "time 1 mode=2",
+    "payload": "02000000000000"
+   },
+   {
+    "set": "time 1 mode=15",
+    "payload": "0f000000000000"
+   },
+   {
+    "set": "time 1 target SOC=1",
+    "payload": "00010000000000"
+   },
+   {
+    "set": "time 1 target SOC=2",
+    "payload": "00020000000000"
+   },
+   {
+    "set": "time 1 target SOC=10",
+    "payload": "000a0000000000"
+   },
+   {
+    "set": "time 2 mode=1",
+    "payload": "10000000000000"
+   },
+   {
+    "set": "time 2 mode=2",
+    "payload": "20000000000000"
+   },
+   {
+    "set": "time 2 mode=15",
+    "payload": "f0000000000000"
+   },
+   {
+    "set": "time 2 target SOC=1",
+    "payload": "00000100000000"
+   },
+   {
+    "set": "time 2 target SOC=2",
+    "payload": "00000200000000"
+   },
+   {
+    "set": "time 2 target SOC=10",
+    "payload": "00000a00000000"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 38,
+  "df": null,
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "Brake electrical parking",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 enable"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "enable=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 38,
+  "df": null,
+  "fct": 17,
+  "opcode": "SetGet",
+  "what": "Brake auto hold",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = auto hold setup"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "auto hold setup=1",
+    "payload": "0100"
+   },
+   {
+    "set": "auto hold setup=2",
+    "payload": "0200"
+   },
+   {
+    "set": "auto hold setup=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 38,
+  "df": null,
+  "fct": 18,
+  "opcode": "SetGet",
+  "what": "Brake esc mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0 = esc mode setup"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "esc mode setup=1",
+    "payload": "0100"
+   },
+   {
+    "set": "esc mode setup=2",
+    "payload": "0200"
+   },
+   {
+    "set": "esc mode setup=10",
+    "payload": "0a00"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 38,
+  "df": null,
+  "fct": 19,
+  "opcode": "SetGet",
+  "what": "Brake hdc mode",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 60,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "EA system",
+  "bytes": "1",
+  "base": "00",
+  "fields": [
+   "b0.4 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "00"
+   },
+   {
+    "set": "state=true",
+    "payload": "10"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 60,
+  "df": null,
+  "fct": 13,
+  "opcode": "SetGet",
+  "what": "EA set factory default",
+  "bytes": "1",
+  "base": "11",
+  "fields": [],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "11"
+   }
+  ],
+  "status": "simulated"
+ },
+ {
+  "lsg": 60,
+  "df": null,
+  "fct": 16,
+  "opcode": "SetGet",
+  "what": "EA pedal jerk",
+  "bytes": "2",
+  "base": "0000",
+  "fields": [
+   "b0.0 state"
+  ],
+  "samples": [
+   {
+    "set": "zero",
+    "payload": "0000"
+   },
+   {
+    "set": "state=true",
+    "payload": "0100"
+   }
+  ],
+  "status": "simulated"
+ }
+]
